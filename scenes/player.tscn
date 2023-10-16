@@ -1,0 +1,167 @@
+[gd_scene load_steps=10 format=3 uid="uid://sbaiant8wohb"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_dq5eh"]
+[ext_resource type="Texture2D" uid="uid://decsr2p5ygqvj" path="res://assets/player_rig_parts/right_shoe.png" id="2_t8a0v"]
+[ext_resource type="Texture2D" uid="uid://bcb7josdt6sam" path="res://assets/player_rig_parts/body.png" id="3_ng6m7"]
+[ext_resource type="Texture2D" uid="uid://cd6g0t46fiqjv" path="res://assets/player_rig_parts/head.png" id="4_smyye"]
+
+[sub_resource type="Animation" id="Animation_hojur"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FullBody/LeftShoeSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, 184)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FullBody/RightShoeSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-24, 184)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FullBody/HeadSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, -120)]
+}
+
+[sub_resource type="Animation" id="Animation_0epk3"]
+resource_name = "test_animation"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FullBody/LeftShoeSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(40, 184), Vector2(40, 200), Vector2(40, 184), Vector2(40, 168)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FullBody/RightShoeSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-24, 184), Vector2(-24, 168), Vector2(-24, 184), Vector2(-24, 200)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FullBody/HeadSprite:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2, -130), Vector2(-2, -110)]
+}
+
+[sub_resource type="Animation" id="Animation_jcesq"]
+resource_name = "idle_anim"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FullBody/LeftShoeSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, 184)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FullBody/RightShoeSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-24, 184)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FullBody/HeadSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, -120)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jjylg"]
+_data = {
+"RESET": SubResource("Animation_hojur"),
+"idle_anim": SubResource("Animation_jcesq"),
+"walk_anim": SubResource("Animation_0epk3")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fltov"]
+radius = 94.0
+height = 498.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_dq5eh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_default_blend_time = 0.5
+libraries = {
+"": SubResource("AnimationLibrary_jjylg")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -44)
+shape = SubResource("CapsuleShape2D_fltov")
+
+[node name="FullBody" type="Sprite2D" parent="."]
+
+[node name="LeftShoeSprite" type="Sprite2D" parent="FullBody"]
+position = Vector2(40, 184)
+texture = ExtResource("2_t8a0v")
+
+[node name="BodySprite" type="Sprite2D" parent="FullBody"]
+texture = ExtResource("3_ng6m7")
+
+[node name="HeadSprite" type="Sprite2D" parent="FullBody"]
+position = Vector2(-2, -120)
+texture = ExtResource("4_smyye")
+
+[node name="RightShoeSprite" type="Sprite2D" parent="FullBody"]
+position = Vector2(-24, 184)
+texture = ExtResource("2_t8a0v")
