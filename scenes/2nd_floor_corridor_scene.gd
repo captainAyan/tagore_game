@@ -1,18 +1,10 @@
 extends Node2D
 
 func _ready():
-	$Player/CanvasLayer/EnterBedroomButton.hide();
-
-
-func _on_bedroom_door_area_2d_body_entered(body):
-	$Player/CanvasLayer/EnterBedroomButton.show();
-
-
-func _on_bedroom_door_area_2d_body_exited(body):
-	$Player/CanvasLayer/EnterBedroomButton.hide();
-
-
-func _on_enter_bedroom_button_pressed():
-	print("enter bedroom")
+	if LastSceneTracker.last_scene_name == "bedroom":
+		$Player.position = Vector2(12528, 1400)
+	elif LastSceneTracker.last_scene_name == "2nd_floor_corridor_3rd_floor_corridor_stairs":
+		$Player.position = Vector2(1011, 1400)
+	
 	LastSceneTracker.last_scene_name = "2nd_floor_corridor"
-	get_tree().change_scene_to_file("res://scenes/bedroom_scene.tscn")
+

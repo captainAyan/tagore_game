@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://buls6myq57hbe"]
+[gd_scene load_steps=15 format=3 uid="uid://buls6myq57hbe"]
 
 [ext_resource type="Script" path="res://scenes/bedroom_scene.gd" id="1_k7dfy"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="2_bt6h3"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bw6jpe5h55dn3" path="res://assets/music note 1.png" id="5_8ldny"]
 [ext_resource type="Texture2D" uid="uid://cjlbtnkhu4ryq" path="res://assets/music note 2.png" id="6_s1x42"]
 [ext_resource type="PackedScene" uid="uid://hk232l4ks1qd" path="res://scenes/hud.tscn" id="8_jbmau"]
-[ext_resource type="Texture2D" uid="uid://d4n4ppalfg37c" path="res://assets/tileset/thakur_bari_tile_set.png" id="9_0iav5"]
+[ext_resource type="Texture2D" uid="uid://d27qwtyi1efm6" path="res://assets/tileset/thakur_bari_tile_set.png" id="9_0iav5"]
 [ext_resource type="PackedScene" uid="uid://sbaiant8wohb" path="res://scenes/player.tscn" id="10_irk2n"]
 
 [sub_resource type="Gradient" id="Gradient_ca1xc"]
@@ -185,9 +185,6 @@ texture_region_size = Vector2i(144, 144)
 tile_size = Vector2i(144, 144)
 sources/0 = SubResource("TileSetAtlasSource_11dbp")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8t0d"]
-size = Vector2(166, 286)
-
 [node name="BedroomScene" type="Node2D"]
 position = Vector2(1296, 1296)
 script = ExtResource("1_k7dfy")
@@ -273,16 +270,6 @@ metadata/_edit_lock_ = true
 [node name="Player" parent="." instance=ExtResource("10_irk2n")]
 position = Vector2(446, 302)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
-
-[node name="ExitBedroomButton" type="Button" parent="Player/CanvasLayer"]
-offset_left = 481.0
-offset_top = 477.0
-offset_right = 651.0
-offset_bottom = 553.0
-theme_override_font_sizes/font_size = 24
-text = "Exit Room"
-
 [node name="HUD" parent="Player" instance=ExtResource("8_jbmau")]
 level_name = "Bedroom Scene"
 
@@ -299,16 +286,3 @@ tile_set = SubResource("TileSet_wqs16")
 format = 2
 layer_0/tile_data = PackedInt32Array(262135, 458752, 9, 327671, 458752, 10, 393207, 458752, 11, 327672, 524288, 10, 393208, 524288, 11, 327673, 589824, 10, 393209, 589824, 11, 327674, 655360, 10, 393210, 655360, 11, 327675, 720896, 10, 393211, 720896, 11, 327676, 786432, 10, 393212, 786432, 11)
 metadata/_edit_lock_ = true
-
-[node name="CorridorDoorArea2D" type="Area2D" parent="."]
-position = Vector2(7548, 432)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CorridorDoorArea2D"]
-position = Vector2(83, 1)
-shape = SubResource("RectangleShape2D_c8t0d")
-metadata/_edit_lock_ = true
-
-[connection signal="pressed" from="Player/CanvasLayer/ExitBedroomButton" to="." method="_on_exit_room_button_pressed"]
-[connection signal="body_entered" from="CorridorDoorArea2D" to="." method="_on_corridor_door_area_2d_body_entered"]
-[connection signal="body_exited" from="CorridorDoorArea2D" to="." method="_on_corridor_door_area_2d_body_exited"]

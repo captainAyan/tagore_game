@@ -44,6 +44,46 @@ tracks/2/keys = {
 "values": [Vector2(-2, -120)]
 }
 
+[sub_resource type="Animation" id="Animation_jcesq"]
+resource_name = "idle_anim"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FullBody/LeftShoeSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, 184)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FullBody/RightShoeSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-24, 184)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FullBody/HeadSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, -120)]
+}
+
 [sub_resource type="Animation" id="Animation_0epk3"]
 resource_name = "test_animation"
 length = 2.0
@@ -85,46 +125,6 @@ tracks/2/keys = {
 "values": [Vector2(-2, -130), Vector2(-2, -110)]
 }
 
-[sub_resource type="Animation" id="Animation_jcesq"]
-resource_name = "idle_anim"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FullBody/LeftShoeSprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(40, 184)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FullBody/RightShoeSprite:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-24, 184)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("FullBody/HeadSprite:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2, -120)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jjylg"]
 _data = {
 "RESET": SubResource("Animation_hojur"),
@@ -148,20 +148,26 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, -44)
 shape = SubResource("CapsuleShape2D_fltov")
+metadata/_edit_lock_ = true
 
 [node name="FullBody" type="Sprite2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="LeftShoeSprite" type="Sprite2D" parent="FullBody"]
 position = Vector2(40, 184)
 texture = ExtResource("2_t8a0v")
+metadata/_edit_lock_ = true
 
 [node name="BodySprite" type="Sprite2D" parent="FullBody"]
 texture = ExtResource("3_ng6m7")
+metadata/_edit_lock_ = true
 
 [node name="HeadSprite" type="Sprite2D" parent="FullBody"]
 position = Vector2(-2, -120)
 texture = ExtResource("4_smyye")
+metadata/_edit_lock_ = true
 
 [node name="RightShoeSprite" type="Sprite2D" parent="FullBody"]
 position = Vector2(-24, 184)
 texture = ExtResource("2_t8a0v")
+metadata/_edit_lock_ = true
