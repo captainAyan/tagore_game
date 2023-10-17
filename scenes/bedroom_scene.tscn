@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://buls6myq57hbe"]
+[gd_scene load_steps=13 format=3 uid="uid://buls6myq57hbe"]
 
 [ext_resource type="Script" path="res://scenes/bedroom_scene.gd" id="1_k7dfy"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="2_bt6h3"]
@@ -270,9 +270,6 @@ metadata/_edit_lock_ = true
 [node name="Player" parent="." instance=ExtResource("10_irk2n")]
 position = Vector2(446, 302)
 
-[node name="HUD" parent="Player" instance=ExtResource("8_jbmau")]
-level_name = "Bedroom Scene"
-
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(11, -195)
 scale = Vector2(48315.3, -4952.72)
@@ -286,3 +283,6 @@ tile_set = SubResource("TileSet_wqs16")
 format = 2
 layer_0/tile_data = PackedInt32Array(262135, 458752, 9, 327671, 458752, 10, 393207, 458752, 11, 327672, 524288, 10, 393208, 524288, 11, 327673, 589824, 10, 393209, 589824, 11, 327674, 655360, 10, 393210, 655360, 11, 327675, 720896, 10, 393211, 720896, 11, 327676, 786432, 10, 393212, 786432, 11)
 metadata/_edit_lock_ = true
+
+[node name="HUD" parent="." instance=ExtResource("8_jbmau")]
+level_name = "Bedroom Scene"
