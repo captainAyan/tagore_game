@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://uubcyj5jowo3"]
+[gd_scene load_steps=6 format=3 uid="uid://uubcyj5jowo3"]
 
 [ext_resource type="Script" path="res://scenes/2nd_floor_corridor_scene.gd" id="1_gshpe"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="2_8fqv6"]
 [ext_resource type="PackedScene" uid="uid://sbaiant8wohb" path="res://scenes/player.tscn" id="3_h6qp1"]
 [ext_resource type="PackedScene" uid="uid://hk232l4ks1qd" path="res://scenes/hud.tscn" id="4_qbned"]
+[ext_resource type="PackedScene" uid="uid://csq3w1g5yh0kj" path="res://scenes/door.tscn" id="5_25eeo"]
 
 [node name="2ndFloorCorridorScene" type="Node2D"]
 position = Vector2(0, 288)
@@ -57,3 +58,13 @@ metadata/_edit_lock_ = true
 
 [node name="HUD" parent="." instance=ExtResource("4_qbned")]
 level_name = "2nd Floor Corridor Scene"
+
+[node name="BedroomDoor" parent="." instance=ExtResource("5_25eeo")]
+position = Vector2(12529, 1439)
+button_label = "Enter Bedroom"
+scene_file = "res://scenes/bedroom_scene.tscn"
+
+[node name="StairsDoor" parent="." instance=ExtResource("5_25eeo")]
+position = Vector2(1000, 1441)
+button_label = "Enter Stairs"
+scene_file = "res://scenes/2nd_floor_corridor_3rd_floor_corridor_stairs_scene.tscn"

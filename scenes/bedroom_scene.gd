@@ -5,4 +5,3 @@ func _ready():
 		$Player.position = Vector2(7620, 400)
 	
 	LastSceneTracker.last_scene_name = "bedroom";
-

@@ -7,4 +7,3 @@ func _ready():
 		$Player.position = Vector2(1011, 1400)
 	
 	LastSceneTracker.last_scene_name = "2nd_floor_corridor"
-
