@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://buls6myq57hbe"]
+[gd_scene load_steps=15 format=3 uid="uid://buls6myq57hbe"]
 
 [ext_resource type="Script" path="res://scenes/bedroom_scene.gd" id="1_k7dfy"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="2_bt6h3"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d27qwtyi1efm6" path="res://assets/tileset/thakur_bari_tile_set.png" id="9_0iav5"]
 [ext_resource type="PackedScene" uid="uid://sbaiant8wohb" path="res://scenes/player.tscn" id="10_irk2n"]
 [ext_resource type="PackedScene" uid="uid://csq3w1g5yh0kj" path="res://scenes/door.tscn" id="10_jc67g"]
+[ext_resource type="PackedScene" uid="uid://ci7xg03cgk7k0" path="res://scenes/clock_hands.tscn" id="13_fc3gx"]
 
 [sub_resource type="Gradient" id="Gradient_ca1xc"]
 offsets = PackedFloat32Array(0, 0.192053, 0.589404, 0.980132)
@@ -292,3 +293,14 @@ level_name = "Bedroom Scene"
 position = Vector2(7632, 432)
 button_label = "Enter Corridor"
 scene_file = "res://scenes/2nd_floor_corridor_scene.tscn"
+metadata/_edit_lock_ = true
+
+[node name="TableClockHands" parent="." instance=ExtResource("13_fc3gx")]
+position = Vector2(-647, 253)
+scale = Vector2(0.75, 0.75)
+metadata/_edit_lock_ = true
+
+[node name="WallClockHands" parent="." instance=ExtResource("13_fc3gx")]
+position = Vector2(360, -356)
+scale = Vector2(1.25, 1.25)
+metadata/_edit_lock_ = true

@@ -22,6 +22,7 @@ LastSceneTracker="*res://last_scene_tracker.gd"
 [display]
 
 window/size/resizable=false
+window/stretch/mode="canvas_items"
 
 [input]
 

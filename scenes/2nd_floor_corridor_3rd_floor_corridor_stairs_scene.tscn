@@ -48,7 +48,9 @@ level_name = "2nd Floor Corridor 3rd Floor Corridor Stairs Scene"
 position = Vector2(428, 4461)
 button_label = "Enter Corridor"
 scene_file = "res://scenes/2nd_floor_corridor_scene.tscn"
+metadata/_edit_lock_ = true
 
 [node name="3rdFloorCorridorDoor" parent="." instance=ExtResource("5_c6frx")]
 position = Vector2(5764, 1724)
 button_label = "Test"
+metadata/_edit_lock_ = true
