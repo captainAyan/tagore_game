@@ -31,7 +31,7 @@ layer_2/tile_data = PackedInt32Array(1638401, 720897, 0, 1703937, 720897, 1, 176
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_2kiwx")]
-position = Vector2(446, 4361)
+position = Vector2(450, 4360)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(11, -195)
@@ -52,5 +52,6 @@ metadata/_edit_lock_ = true
 
 [node name="3rdFloorCorridorDoor" parent="." instance=ExtResource("5_c6frx")]
 position = Vector2(5764, 1724)
-button_label = "Test"
+button_label = "Enter Corridor"
+scene_file = "res://scenes/3rd_floor_corridor_scene.tscn"
 metadata/_edit_lock_ = true
