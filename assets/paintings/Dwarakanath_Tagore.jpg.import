@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beltumkakqqvo"
-path="res://.godot/imported/full.png-0fee991b84a1fa22cc8154cee55b27bb.ctex"
+uid="uid://cvh7s0gpdtfnc"
+path="res://.godot/imported/Dwarakanath_Tagore.jpg-f7ec4e5dc95bfeab535d4e743d77573d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/full.png"
-dest_files=["res://.godot/imported/full.png-0fee991b84a1fa22cc8154cee55b27bb.ctex"]
+source_file="res://assets/paintings/Dwarakanath_Tagore.jpg"
+dest_files=["res://.godot/imported/Dwarakanath_Tagore.jpg-f7ec4e5dc95bfeab535d4e743d77573d.ctex"]
 
 [params]
 

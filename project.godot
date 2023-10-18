@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Tagore"
-run/main_scene="res://scenes/bedroom_scene.tscn"
+run/main_scene="res://scenes/thakurbari_scenes/bedroom_scene/bedroom_scene.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
 [autoload]
 
-LastSceneTracker="*res://last_scene_tracker.gd"
+LastSceneTracker="*res://globals/last_scene_tracker.gd"
 
 [display]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://decsr2p5ygqvj"
-path="res://.godot/imported/right_shoe.png-f6b80991a2d7f9046db45fae55bc4322.ctex"
+path="res://.godot/imported/right_shoe.png-c1e990352ca60d05a3f24720b6d54f94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player_rig_parts/right_shoe.png"
-dest_files=["res://.godot/imported/right_shoe.png-f6b80991a2d7f9046db45fae55bc4322.ctex"]
+source_file="res://assets/player/right_shoe.png"
+dest_files=["res://.godot/imported/right_shoe.png-c1e990352ca60d05a3f24720b6d54f94.ctex"]
 
 [params]
 

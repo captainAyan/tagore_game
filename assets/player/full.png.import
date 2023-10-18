@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d27qwtyi1efm6"
-path="res://.godot/imported/thakur_bari_tile_set.png-5e615d6709c0279045e8595fa59b6866.ctex"
+uid="uid://beltumkakqqvo"
+path="res://.godot/imported/full.png-39af23515baeb80739be085ca43d1833.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/thakur_bari_tile_set.png"
-dest_files=["res://.godot/imported/thakur_bari_tile_set.png-5e615d6709c0279045e8595fa59b6866.ctex"]
+source_file="res://assets/player/full.png"
+dest_files=["res://.godot/imported/full.png-39af23515baeb80739be085ca43d1833.ctex"]
 
 [params]
 

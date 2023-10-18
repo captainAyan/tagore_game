@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doayhcyxi84im"
-path="res://.godot/imported/left_shoe.png-b4f89b4bc8f2c56ec889ed25abe1290d.ctex"
+uid="uid://d27qwtyi1efm6"
+path="res://.godot/imported/thakurbari_tile_set.png-3efad7e7a164ffc2baf2772e0985f386.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player_rig_parts/left_shoe.png"
-dest_files=["res://.godot/imported/left_shoe.png-b4f89b4bc8f2c56ec889ed25abe1290d.ctex"]
+source_file="res://assets/tileset/thakurbari_tile_set.png"
+dest_files=["res://.godot/imported/thakurbari_tile_set.png-3efad7e7a164ffc2baf2772e0985f386.ctex"]
 
 [params]
 

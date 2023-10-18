@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cpd5m658c1iap"]
 
-[ext_resource type="Texture2D" uid="uid://d27qwtyi1efm6" path="res://assets/tileset/thakur_bari_tile_set.png" id="1_6fju5"]
+[ext_resource type="Texture2D" uid="uid://d27qwtyi1efm6" path="res://assets/tileset/thakurbari_tile_set.png" id="1_h0epk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k2ont"]
-texture = ExtResource("1_6fju5")
+texture = ExtResource("1_h0epk")
 texture_region_size = Vector2i(144, 144)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)

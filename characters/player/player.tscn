@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://sbaiant8wohb"]
 
-[ext_resource type="Script" path="res://scenes/player.gd" id="1_dq5eh"]
-[ext_resource type="Texture2D" uid="uid://decsr2p5ygqvj" path="res://assets/player_rig_parts/right_shoe.png" id="2_t8a0v"]
-[ext_resource type="Texture2D" uid="uid://bcb7josdt6sam" path="res://assets/player_rig_parts/body.png" id="3_ng6m7"]
-[ext_resource type="Texture2D" uid="uid://cd6g0t46fiqjv" path="res://assets/player_rig_parts/head.png" id="4_smyye"]
+[ext_resource type="Script" path="res://characters/player/player.gd" id="1_dq5eh"]
+[ext_resource type="Texture2D" uid="uid://decsr2p5ygqvj" path="res://assets/player/right_shoe.png" id="2_t8a0v"]
+[ext_resource type="Texture2D" uid="uid://bcb7josdt6sam" path="res://assets/player/body.png" id="3_ng6m7"]
+[ext_resource type="Texture2D" uid="uid://cd6g0t46fiqjv" path="res://assets/player/head.png" id="4_smyye"]
 
 [sub_resource type="Animation" id="Animation_hojur"]
 length = 0.001

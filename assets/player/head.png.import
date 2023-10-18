@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnyi2wqj2j6y4"
-path="res://.godot/imported/old indian map.jpg-e216f88645a4df9c82fc4a3a4bfd2128.ctex"
+uid="uid://cd6g0t46fiqjv"
+path="res://.godot/imported/head.png-3002f27fc79650bc7b323c93b17609ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/old indian map.jpg"
-dest_files=["res://.godot/imported/old indian map.jpg-e216f88645a4df9c82fc4a3a4bfd2128.ctex"]
+source_file="res://assets/player/head.png"
+dest_files=["res://.godot/imported/head.png-3002f27fc79650bc7b323c93b17609ac.ctex"]
 
 [params]
 

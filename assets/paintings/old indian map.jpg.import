@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvh7s0gpdtfnc"
-path="res://.godot/imported/Dwarakanath_Tagore.jpg-fe0b7aca3e8a2a25f40b3dbc40281d18.ctex"
+uid="uid://dnyi2wqj2j6y4"
+path="res://.godot/imported/old indian map.jpg-87b0ef135a067322af2c918c4b7bc369.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Dwarakanath_Tagore.jpg"
-dest_files=["res://.godot/imported/Dwarakanath_Tagore.jpg-fe0b7aca3e8a2a25f40b3dbc40281d18.ctex"]
+source_file="res://assets/paintings/old indian map.jpg"
+dest_files=["res://.godot/imported/old indian map.jpg-87b0ef135a067322af2c918c4b7bc369.ctex"]
 
 [params]
 
