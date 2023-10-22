@@ -289,10 +289,11 @@ metadata/_edit_lock_ = true
 [node name="HUD" parent="." instance=ExtResource("8_jbmau")]
 level_name = "Bedroom Scene"
 
-[node name="CorridorDoor" parent="." instance=ExtResource("10_jc67g")]
+[node name="CorridorDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_jc67g")]
 position = Vector2(7632, 432)
 button_label = "Enter Corridor"
 scene_file = "res://scenes/thakurbari_scenes/2nd_floor_corridor_scene/2nd_floor_corridor_scene.tscn"
+player = NodePath("../Player")
 metadata/_edit_lock_ = true
 
 [node name="TableClockHands" parent="." instance=ExtResource("13_fc3gx")]

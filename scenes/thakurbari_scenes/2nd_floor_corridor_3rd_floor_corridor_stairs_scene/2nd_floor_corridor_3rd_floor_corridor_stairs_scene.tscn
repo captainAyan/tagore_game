@@ -44,14 +44,16 @@ editor_draw_limits = true
 [node name="HUD" parent="." instance=ExtResource("4_u3rh4")]
 level_name = "2nd Floor Corridor 3rd Floor Corridor Stairs Scene"
 
-[node name="2ndFloorCorridorDoor" parent="." instance=ExtResource("5_iw8hc")]
+[node name="2ndFloorCorridorDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_iw8hc")]
 position = Vector2(428, 4461)
 button_label = "Enter Corridor"
 scene_file = "res://scenes/thakurbari_scenes/2nd_floor_corridor_scene/2nd_floor_corridor_scene.tscn"
+player = NodePath("../Player")
 metadata/_edit_lock_ = true
 
-[node name="3rdFloorCorridorDoor" parent="." instance=ExtResource("5_iw8hc")]
+[node name="3rdFloorCorridorDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_iw8hc")]
 position = Vector2(5764, 1724)
 button_label = "Enter Corridor"
 scene_file = "res://scenes/thakurbari_scenes/3rd_floor_corridor_scene/3rd_floor_corridor_scene.tscn"
+player = NodePath("../Player")
 metadata/_edit_lock_ = true

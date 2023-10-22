@@ -59,14 +59,16 @@ metadata/_edit_lock_ = true
 [node name="HUD" parent="." instance=ExtResource("4_lrvyi")]
 level_name = "2nd Floor Corridor Scene"
 
-[node name="BedroomDoor" parent="." instance=ExtResource("5_7y2dy")]
+[node name="BedroomDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_7y2dy")]
 position = Vector2(12529, 1439)
 button_label = "Enter Bedroom"
 scene_file = "res://scenes/thakurbari_scenes/bedroom_scene/bedroom_scene.tscn"
+player = NodePath("../Player")
 metadata/_edit_lock_ = true
 
-[node name="StairsDoor" parent="." instance=ExtResource("5_7y2dy")]
+[node name="StairsDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_7y2dy")]
 position = Vector2(1000, 1441)
 button_label = "Enter Stairs"
 scene_file = "res://scenes/thakurbari_scenes/2nd_floor_corridor_3rd_floor_corridor_stairs_scene/2nd_floor_corridor_3rd_floor_corridor_stairs_scene.tscn"
+player = NodePath("../Player")
 metadata/_edit_lock_ = true
