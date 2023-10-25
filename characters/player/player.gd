@@ -43,9 +43,7 @@ func _physics_process(delta):
 	elif direction < -0.5:
 		last_character_face_direction = -1
 		$FullBody.scale.x = -1
-		print("left")
 	else:
-		print("ls dir")
 		$FullBody.scale.x = last_character_face_direction
 	
 
