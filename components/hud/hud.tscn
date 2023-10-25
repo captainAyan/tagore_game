@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://hk232l4ks1qd"]
+[gd_scene load_steps=3 format=3 uid="uid://hk232l4ks1qd"]
 
 [ext_resource type="Script" path="res://components/hud/hud.gd" id="1_rlorv"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://components/joystick/joystick.tscn" id="3_6v57f"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_rlorv")
@@ -13,3 +14,16 @@ offset_bottom = 70.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Level  Name Here"
+metadata/_edit_lock_ = true
+
+[node name="Virtual Joystick" parent="." instance=ExtResource("3_6v57f")]
+pressed_color = null
+deadzone_size = null
+clampzone_size = null
+joystick_mode = 1
+visibility_mode = null
+use_input_actions = null
+action_left = null
+action_right = null
+action_up = null
+action_down = null

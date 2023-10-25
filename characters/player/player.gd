@@ -34,8 +34,19 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	# change character sprite direction
-	if direction != 0 && last_character_face_direction != direction:
-		last_character_face_direction = direction
-		$FullBody.scale.x = -$FullBody.scale.x # the flip
+#	if direction != 0 && last_character_face_direction != direction:
+#		last_character_face_direction = direction
+#		$FullBody.scale.x = -$FullBody.scale.x # the flip
+	if direction > 0.5:
+		last_character_face_direction = 1
+		$FullBody.scale.x = 1
+	elif direction < -0.5:
+		last_character_face_direction = -1
+		$FullBody.scale.x = -1
+		print("left")
+	else:
+		print("ls dir")
+		$FullBody.scale.x = last_character_face_direction
+	
 
 	move_and_slide()
