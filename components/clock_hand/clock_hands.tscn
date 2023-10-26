@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ci7xg03cgk7k0"]
 
 [ext_resource type="Script" path="res://components/clock_hand/clock_hands.gd" id="1_j4rf3"]
-[ext_resource type="Texture2D" uid="uid://cdaaj5dklcq35" path="res://assets/clock_minute_hand.png" id="3_2ep4o"]
+[ext_resource type="Texture2D" uid="uid://cdaaj5dklcq35" path="res://assets/clock_parts/clock_minute_hand.png" id="3_2ep4o"]
 
 [sub_resource type="Animation" id="Animation_am53w"]
 length = 0.001

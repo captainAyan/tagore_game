@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://buls6myq57hbe"]
+[gd_scene load_steps=17 format=3 uid="uid://buls6myq57hbe"]
 
 [ext_resource type="Script" path="res://scenes/thakurbari_scenes/bedroom_scene/bedroom_scene.gd" id="1_k7dfy"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="2_bt6h3"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://sbaiant8wohb" path="res://characters/player/player.tscn" id="10_irk2n"]
 [ext_resource type="PackedScene" uid="uid://csq3w1g5yh0kj" path="res://components/door/door.tscn" id="10_jc67g"]
 [ext_resource type="PackedScene" uid="uid://blbhqre5hf5v6" path="res://components/controller/controller.tscn" id="12_41syf"]
+[ext_resource type="PackedScene" uid="uid://bmkccaxf6cfhs" path="res://components/pendulum/pendulum.tscn" id="13_e21l2"]
 [ext_resource type="PackedScene" uid="uid://ci7xg03cgk7k0" path="res://components/clock_hand/clock_hands.tscn" id="13_fc3gx"]
 
 [sub_resource type="Gradient" id="Gradient_ca1xc"]
@@ -302,6 +303,10 @@ metadata/_edit_lock_ = true
 [node name="WallClockHands" parent="." instance=ExtResource("13_fc3gx")]
 position = Vector2(360, -356)
 scale = Vector2(1.25, 1.25)
+metadata/_edit_lock_ = true
+
+[node name="Pendulum" parent="." instance=ExtResource("13_e21l2")]
+position = Vector2(360, -296)
 metadata/_edit_lock_ = true
 
 [node name="HUD" parent="." instance=ExtResource("8_jbmau")]
