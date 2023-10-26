@@ -15,8 +15,7 @@ func _process(delta):
 		$AnimationPlayer.play("walk_anim", -1, 5, false);
 	else:
 		$AnimationPlayer.play("idle_anim");
-
-func _physics_process(delta):
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta

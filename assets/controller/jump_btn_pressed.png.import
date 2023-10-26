@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx7d4wdfq5kr6"
-path="res://.godot/imported/joystick_base_outline.png-a34c2019b17a4999d9121f5b77041570.ctex"
+uid="uid://dfc6sxfsr5x2l"
+path="res://.godot/imported/jump_btn_pressed.png-eb8b669c90f382e72e42a48b92ae92d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/joystick/joystick_base_outline.png"
-dest_files=["res://.godot/imported/joystick_base_outline.png-a34c2019b17a4999d9121f5b77041570.ctex"]
+source_file="res://assets/controller/jump_btn_pressed.png"
+dest_files=["res://.godot/imported/jump_btn_pressed.png-eb8b669c90f382e72e42a48b92ae92d1.ctex"]
 
 [params]
 
