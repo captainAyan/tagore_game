@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://buls6myq57hbe"]
+[gd_scene load_steps=16 format=3 uid="uid://buls6myq57hbe"]
 
 [ext_resource type="Script" path="res://scenes/thakurbari_scenes/bedroom_scene/bedroom_scene.gd" id="1_k7dfy"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="2_bt6h3"]
 [ext_resource type="Texture2D" uid="uid://cvh7s0gpdtfnc" path="res://assets/paintings/Dwarakanath_Tagore.jpg" id="3_frs6y"]
 [ext_resource type="Texture2D" uid="uid://dnyi2wqj2j6y4" path="res://assets/paintings/old indian map.jpg" id="4_os3w0"]
-[ext_resource type="Texture2D" uid="uid://bw6jpe5h55dn3" path="res://assets/music_note_1.png" id="5_8ldny"]
-[ext_resource type="Texture2D" uid="uid://cjlbtnkhu4ryq" path="res://assets/music_note_2.png" id="6_s1x42"]
+[ext_resource type="Texture2D" uid="uid://bw6jpe5h55dn3" path="res://assets/particle/music_note_1.png" id="5_8ldny"]
+[ext_resource type="Texture2D" uid="uid://cjlbtnkhu4ryq" path="res://assets/particle/music_note_2.png" id="6_s1x42"]
 [ext_resource type="PackedScene" uid="uid://hk232l4ks1qd" path="res://components/hud/hud.tscn" id="8_jbmau"]
 [ext_resource type="Texture2D" uid="uid://d27qwtyi1efm6" path="res://assets/tileset/thakurbari_tile_set.png" id="9_0iav5"]
 [ext_resource type="PackedScene" uid="uid://sbaiant8wohb" path="res://characters/player/player.tscn" id="10_irk2n"]
 [ext_resource type="PackedScene" uid="uid://csq3w1g5yh0kj" path="res://components/door/door.tscn" id="10_jc67g"]
+[ext_resource type="PackedScene" uid="uid://blbhqre5hf5v6" path="res://components/controller/controller.tscn" id="12_41syf"]
 [ext_resource type="PackedScene" uid="uid://ci7xg03cgk7k0" path="res://components/clock_hand/clock_hands.tscn" id="13_fc3gx"]
 
 [sub_resource type="Gradient" id="Gradient_ca1xc"]
@@ -286,9 +287,6 @@ format = 2
 layer_0/tile_data = PackedInt32Array(262135, 458752, 9, 327671, 458752, 10, 393207, 458752, 11, 327672, 524288, 10, 393208, 524288, 11, 327673, 589824, 10, 393209, 589824, 11, 327674, 655360, 10, 393210, 655360, 11, 327675, 720896, 10, 393211, 720896, 11, 327676, 786432, 10, 393212, 786432, 11)
 metadata/_edit_lock_ = true
 
-[node name="HUD" parent="." instance=ExtResource("8_jbmau")]
-level_name = "Bedroom Scene"
-
 [node name="CorridorDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_jc67g")]
 position = Vector2(7632, 432)
 button_label = "Enter Corridor"
@@ -305,3 +303,8 @@ metadata/_edit_lock_ = true
 position = Vector2(360, -356)
 scale = Vector2(1.25, 1.25)
 metadata/_edit_lock_ = true
+
+[node name="HUD" parent="." instance=ExtResource("8_jbmau")]
+level_name = "Bedroom Scene"
+
+[node name="Controller" parent="." instance=ExtResource("12_41syf")]
