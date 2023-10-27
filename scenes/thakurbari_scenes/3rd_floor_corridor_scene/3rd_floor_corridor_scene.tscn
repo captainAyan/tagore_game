@@ -67,3 +67,9 @@ metadata/_edit_lock_ = true
 level_name = "3rd Floor Corridor Scene"
 
 [node name="Controller" parent="." instance=ExtResource("6_fgl2p")]
+
+[node name="DebendranathBedroomDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_hbuvh")]
+position = Vector2(9648, 1440)
+button_label = "Enter Room"
+scene_file = "res://scenes/thakurbari_scenes/debendranath_bedroom_scene/debendranath_bedroom_scene.tscn"
+player = NodePath("../Player")
