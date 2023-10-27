@@ -66,4 +66,4 @@ metadata/_edit_lock_ = true
 [node name="HUD" parent="." instance=ExtResource("4_68xxy")]
 level_name = "3rd Floor Corridor Scene"
 
-[node name="Controller2" parent="." instance=ExtResource("6_fgl2p")]
+[node name="Controller" parent="." instance=ExtResource("6_fgl2p")]
