@@ -77,6 +77,13 @@ scene_file = "res://scenes/thakurbari_scenes/abanindranath_bedroom_scene/abanind
 player = NodePath("../Player")
 metadata/_edit_lock_ = true
 
+[node name="JyotirindranathBedroomDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_hbuvh")]
+position = Vector2(3888, 1440)
+button_label = "Enter Room"
+scene_file = "res://scenes/thakurbari_scenes/jyotirindranath_bedroom_scene/jyotirindranath_bedroom_scene.tscn"
+player = NodePath("../Player")
+metadata/_edit_lock_ = true
+
 [node name="HUD" parent="." instance=ExtResource("4_68xxy")]
 level_name = "3rd Floor Corridor Scene"
 
