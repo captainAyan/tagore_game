@@ -184,6 +184,36 @@ texture_region_size = Vector2i(144, 144)
 10:11/0 = 0
 11:11/0 = 0
 12:11/0 = 0
+0:11/0 = 0
+0:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+1:12/0 = 0
+1:11/0 = 0
+2:12/0 = 0
+2:13/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+8:12/0 = 0
+8:13/0 = 0
+8:14/0 = 0
+7:12/0 = 0
+7:13/0 = 0
+7:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+10:13/0 = 0
+9:13/0 = 0
+11:14/0 = 0
+11:13/0 = 0
+11:12/0 = 0
+10:9/0 = 0
+9:9/0 = 0
+8:9/0 = 0
+13:9/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+14:9/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_wqs16"]
 tile_size = Vector2i(144, 144)
@@ -285,7 +315,14 @@ editor_draw_limits = true
 [node name="ForegroundTileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_wqs16")
 format = 2
-layer_0/tile_data = PackedInt32Array(262135, 458752, 9, 327671, 458752, 10, 393207, 458752, 11, 327672, 524288, 10, 393208, 524288, 11, 327673, 589824, 10, 393209, 589824, 11, 327674, 655360, 10, 393210, 655360, 11, 327675, 720896, 10, 393211, 720896, 11, 327676, 786432, 10, 393212, 786432, 11)
+layer_0/tile_data = PackedInt32Array(327672, 524288, 10, 327676, 524288, 12, 393212, 786432, 11, 327671, 524288, 10, 327673, 524288, 12, 327674, 524288, 12, 327675, 524288, 12)
+layer_1/name = ""
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(262135, 458752, 9, 327671, 458752, 10, 393207, 458752, 11, 393208, 524288, 11, 393209, 524288, 11, 393210, 524288, 11, 393211, 524288, 11, 327673, 524288, 9, 327676, 720896, 10, 393212, 720896, 11)
 metadata/_edit_lock_ = true
 
 [node name="CorridorDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_jc67g")]

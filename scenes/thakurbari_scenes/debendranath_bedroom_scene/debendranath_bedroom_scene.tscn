@@ -59,7 +59,14 @@ editor_draw_limits = true
 [node name="ForegroundTileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_6vr2s")
 format = 2
-layer_0/tile_data = PackedInt32Array(786432, 458753, 9, 851968, 458753, 10, 917504, 458753, 11, 851969, 524289, 10, 917505, 524289, 11, 851970, 589825, 10, 917506, 589825, 11, 851971, 655361, 10, 917507, 655361, 11, 851972, 720897, 10, 917508, 720897, 11, 851973, 786433, 10, 917509, 786433, 11)
+layer_0/tile_data = PackedInt32Array(851973, 655361, 9, 917509, 786433, 11, 851970, 655361, 9, 851971, 655361, 9, 851972, 655361, 9, 851969, 524289, 10, 851968, 524289, 10)
+layer_1/name = ""
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(786432, 458753, 12, 851968, 458753, 13, 917504, 458753, 14, 917505, 524289, 14, 917506, 524289, 14, 917507, 524289, 14, 917508, 524289, 14, 851970, 524289, 9, 851973, 589825, 13, 917509, 589825, 14)
 metadata/_edit_lock_ = true
 
 [node name="MusicNoteCPUParticles2D" type="CPUParticles2D" parent="."]
