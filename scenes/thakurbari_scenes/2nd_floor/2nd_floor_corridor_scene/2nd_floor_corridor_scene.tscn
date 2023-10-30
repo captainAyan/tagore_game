@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://uubcyj5jowo3"]
 
-[ext_resource type="Script" path="res://scenes/thakurbari_scenes/2nd_floor_corridor_scene/2nd_floor_corridor_scene.gd" id="1_nypv3"]
+[ext_resource type="Script" path="res://scenes/thakurbari_scenes/2nd_floor/2nd_floor_corridor_scene/2nd_floor_corridor_scene.gd" id="1_nypv3"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="2_wysm2"]
 [ext_resource type="PackedScene" uid="uid://sbaiant8wohb" path="res://characters/player/player.tscn" id="3_veexk"]
 [ext_resource type="PackedScene" uid="uid://hk232l4ks1qd" path="res://components/hud/hud.tscn" id="4_lrvyi"]
@@ -60,7 +60,7 @@ metadata/_edit_lock_ = true
 [node name="BedroomDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_7y2dy")]
 position = Vector2(12529, 1439)
 button_label = "Enter Bedroom"
-scene_file = "res://scenes/thakurbari_scenes/bedroom_scene/bedroom_scene.tscn"
+scene_file = "res://scenes/thakurbari_scenes/2nd_floor/bedroom_scene/bedroom_scene.tscn"
 player = NodePath("../Player")
 metadata/_edit_lock_ = true
 
