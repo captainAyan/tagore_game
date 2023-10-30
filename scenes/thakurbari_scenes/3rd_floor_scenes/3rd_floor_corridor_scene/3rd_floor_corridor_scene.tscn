@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bh07qvqjxe7bq"]
 
-[ext_resource type="Script" path="res://scenes/thakurbari_scenes/3rd_floor/3rd_floor_corridor_scene/3rd_floor_corridor_scene.gd" id="1_8s2x0"]
+[ext_resource type="Script" path="res://scenes/thakurbari_scenes/3rd_floor_scenes/3rd_floor_corridor_scene/3rd_floor_corridor_scene.gd" id="1_8s2x0"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="2_umdt0"]
 [ext_resource type="PackedScene" uid="uid://sbaiant8wohb" path="res://characters/player/player.tscn" id="3_wsaxx"]
 [ext_resource type="PackedScene" uid="uid://hk232l4ks1qd" path="res://components/hud/hud.tscn" id="4_68xxy"]
@@ -66,21 +66,21 @@ metadata/_edit_lock_ = true
 [node name="DebendranathBedroomDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_hbuvh")]
 position = Vector2(9648, 1728)
 button_label = "Enter Room"
-scene_file = "res://scenes/thakurbari_scenes/3rd_floor/debendranath_bedroom_scene/debendranath_bedroom_scene.tscn"
+scene_file = "res://scenes/thakurbari_scenes/3rd_floor_scenes/debendranath_bedroom_scene/debendranath_bedroom_scene.tscn"
 player = NodePath("../Player")
 metadata/_edit_lock_ = true
 
 [node name="AbanindranathBedroomDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_hbuvh")]
 position = Vector2(6768, 1728)
 button_label = "Enter Room"
-scene_file = "res://scenes/thakurbari_scenes/3rd_floor/abanindranath_bedroom_scene/abanindranath_bedroom_scene.tscn"
+scene_file = "res://scenes/thakurbari_scenes/3rd_floor_scenes/abanindranath_bedroom_scene/abanindranath_bedroom_scene.tscn"
 player = NodePath("../Player")
 metadata/_edit_lock_ = true
 
 [node name="JyotirindranathBedroomDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_hbuvh")]
 position = Vector2(3888, 1728)
 button_label = "Enter Room"
-scene_file = "res://scenes/thakurbari_scenes/3rd_floor/jyotirindranath_bedroom_scene/jyotirindranath_bedroom_scene.tscn"
+scene_file = "res://scenes/thakurbari_scenes/3rd_floor_scenes/jyotirindranath_bedroom_scene/jyotirindranath_bedroom_scene.tscn"
 player = NodePath("../Player")
 metadata/_edit_lock_ = true
 

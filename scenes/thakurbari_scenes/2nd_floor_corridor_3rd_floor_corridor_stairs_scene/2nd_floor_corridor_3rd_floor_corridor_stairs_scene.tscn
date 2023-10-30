@@ -45,14 +45,14 @@ editor_draw_limits = true
 [node name="2ndFloorCorridorDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_iw8hc")]
 position = Vector2(432, 4464)
 button_label = "Enter Corridor"
-scene_file = "res://scenes/thakurbari_scenes/2nd_floor/2nd_floor_corridor_scene/2nd_floor_corridor_scene.tscn"
+scene_file = "res://scenes/thakurbari_scenes/2nd_floor_scenes/2nd_floor_corridor_scene/2nd_floor_corridor_scene.tscn"
 player = NodePath("../Player")
 metadata/_edit_lock_ = true
 
 [node name="3rdFloorCorridorDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_iw8hc")]
 position = Vector2(5760, 1728)
 button_label = "Enter Corridor"
-scene_file = "res://scenes/thakurbari_scenes/3rd_floor/3rd_floor_corridor_scene/3rd_floor_corridor_scene.tscn"
+scene_file = "res://scenes/thakurbari_scenes/3rd_floor_scenes/3rd_floor_corridor_scene/3rd_floor_corridor_scene.tscn"
 player = NodePath("../Player")
 metadata/_edit_lock_ = true
 
