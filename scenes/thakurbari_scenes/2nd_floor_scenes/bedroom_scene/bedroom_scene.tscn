@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://buls6myq57hbe"]
+[gd_scene load_steps=20 format=3 uid="uid://buls6myq57hbe"]
 
 [ext_resource type="Script" path="res://scenes/thakurbari_scenes/2nd_floor_scenes/bedroom_scene/bedroom_scene.gd" id="1_k7dfy"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="2_bt6h3"]
@@ -219,6 +219,148 @@ texture_region_size = Vector2i(144, 144)
 tile_size = Vector2i(144, 144)
 sources/0 = SubResource("TileSetAtlasSource_11dbp")
 
+[sub_resource type="Animation" id="Animation_cebjd"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_c56cw"]
+resource_name = "wake_up_anim"
+length = 38.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutSceneCamera:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10, 15, 20, 25, 33, 38),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1.5, 1.5), Vector2(2, 2), Vector2(1.8, 1.8), Vector2(3, 3), Vector2(3.2, 3.2), Vector2(3.2, 3.2), Vector2(2.8, 2.8)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CutSceneCamera")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10, 20, 33),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"make_current"
+}, {
+"args": [],
+"method": &"make_current"
+}, {
+"args": [],
+"method": &"make_current"
+}, {
+"args": [],
+"method": &"make_current"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CutSceneCamera2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5, 15, 25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"make_current"
+}, {
+"args": [],
+"method": &"make_current"
+}, {
+"args": [],
+"method": &"make_current"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CutSceneCamera2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5, 10.1, 15, 20, 25, 33),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2792, 40), Vector2(3000, 40), Vector2(6928, 240), Vector2(6928, 280), Vector2(-540, 568), Vector2(-580, 568)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CutSceneCamera2:zoom")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(5, 15, 25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(1, 1), Vector2(1.8, 1.8), Vector2(2.5, 2.5)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CutSceneCamera:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 10, 20, 33),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(360, -304), Vector2(5120, 112), Vector2(-648, 248), Vector2(-840, 400)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Player:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 32, 33),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-1.5708, -1.5708, 0.0]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player/Camera2D")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(38),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"make_current"
+}]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Player:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(32, 33),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-853, 552), Vector2(-853, 516)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2oqma"]
+_data = {
+"RESET": SubResource("Animation_cebjd"),
+"wake_up_anim": SubResource("Animation_c56cw")
+}
+
 [node name="BedroomScene" type="Node2D"]
 position = Vector2(1296, 1296)
 script = ExtResource("1_k7dfy")
@@ -302,7 +444,8 @@ color_ramp = SubResource("Gradient_ca1xc")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("10_irk2n")]
-position = Vector2(446, 302)
+position = Vector2(-853, 516)
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(11, -195)
@@ -350,3 +493,16 @@ metadata/_edit_lock_ = true
 level_name = "Bedroom Scene"
 
 [node name="Controller" parent="." instance=ExtResource("12_41syf")]
+
+[node name="CutSceneCamera" type="Camera2D" parent="."]
+position = Vector2(-840, 400)
+zoom = Vector2(3.168, 3.168)
+
+[node name="CutSceneCamera2" type="Camera2D" parent="."]
+position = Vector2(-580, 568)
+zoom = Vector2(2.5, 2.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2oqma")
+}
