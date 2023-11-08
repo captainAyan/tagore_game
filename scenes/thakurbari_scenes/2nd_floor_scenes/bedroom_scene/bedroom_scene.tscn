@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bw6jpe5h55dn3" path="res://assets/particle/music_note_1.png" id="5_8ldny"]
 [ext_resource type="Texture2D" uid="uid://cjlbtnkhu4ryq" path="res://assets/particle/music_note_2.png" id="6_s1x42"]
 [ext_resource type="PackedScene" uid="uid://hk232l4ks1qd" path="res://components/hud/hud.tscn" id="8_jbmau"]
-[ext_resource type="Texture2D" uid="uid://d27qwtyi1efm6" path="res://assets/tileset/thakurbari_tile_set.png" id="9_0iav5"]
+[ext_resource type="Texture2D" uid="uid://dn6x2cu0dat5c" path="res://assets/tileset/thakurbari_tile_set.png" id="9_0iav5"]
 [ext_resource type="PackedScene" uid="uid://sbaiant8wohb" path="res://characters/player/player.tscn" id="10_irk2n"]
 [ext_resource type="PackedScene" uid="uid://csq3w1g5yh0kj" path="res://components/door/door.tscn" id="10_jc67g"]
 [ext_resource type="PackedScene" uid="uid://blbhqre5hf5v6" path="res://components/controller/controller.tscn" id="12_41syf"]
