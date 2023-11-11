@@ -1,11 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://buls6myq57hbe"]
+[gd_scene load_steps=18 format=3 uid="uid://buls6myq57hbe"]
 
 [ext_resource type="Script" path="res://scenes/thakurbari_scenes/2nd_floor_scenes/bedroom_scene/bedroom_scene.gd" id="1_k7dfy"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="2_bt6h3"]
 [ext_resource type="Texture2D" uid="uid://cvh7s0gpdtfnc" path="res://assets/paintings/Dwarakanath_Tagore.jpg" id="3_frs6y"]
 [ext_resource type="Texture2D" uid="uid://dnyi2wqj2j6y4" path="res://assets/paintings/old indian map.jpg" id="4_os3w0"]
-[ext_resource type="Texture2D" uid="uid://bw6jpe5h55dn3" path="res://assets/particle/music_note_1.png" id="5_8ldny"]
-[ext_resource type="Texture2D" uid="uid://cjlbtnkhu4ryq" path="res://assets/particle/music_note_2.png" id="6_s1x42"]
+[ext_resource type="PackedScene" uid="uid://du78efvm3qb02" path="res://components/music_particle/music_particle.tscn" id="7_763q6"]
 [ext_resource type="PackedScene" uid="uid://hk232l4ks1qd" path="res://components/hud/hud.tscn" id="8_jbmau"]
 [ext_resource type="Texture2D" uid="uid://dn6x2cu0dat5c" path="res://assets/tileset/thakurbari_tile_set.png" id="9_0iav5"]
 [ext_resource type="PackedScene" uid="uid://sbaiant8wohb" path="res://characters/player/player.tscn" id="10_irk2n"]
@@ -13,10 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://blbhqre5hf5v6" path="res://components/controller/controller.tscn" id="12_41syf"]
 [ext_resource type="PackedScene" uid="uid://bmkccaxf6cfhs" path="res://components/pendulum/pendulum.tscn" id="13_e21l2"]
 [ext_resource type="PackedScene" uid="uid://ci7xg03cgk7k0" path="res://components/clock_hand/clock_hands.tscn" id="13_fc3gx"]
-
-[sub_resource type="Gradient" id="Gradient_ca1xc"]
-offsets = PackedFloat32Array(0, 0.192053, 0.589404, 0.980132)
-colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_11dbp"]
 texture = ExtResource("9_0iav5")
@@ -417,42 +412,8 @@ scale = Vector2(0.456929, 0.43)
 texture = ExtResource("4_os3w0")
 metadata/_edit_lock_ = true
 
-[node name="MusicNoteCPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(5075, 89)
-amount = 5
-lifetime = 3.0
-randomness = 0.1
-texture = ExtResource("5_8ldny")
-emission_shape = 1
-emission_sphere_radius = 6.47
-direction = Vector2(-1, -1)
-spread = 41.82
-gravity = Vector2(0, 0)
-initial_velocity_min = 50.51
-initial_velocity_max = 151.51
-angle_min = -43.6
-angle_max = 58.2
-scale_amount_min = 0.5
-color_ramp = SubResource("Gradient_ca1xc")
-metadata/_edit_lock_ = true
-
-[node name="MusicNoteCPUParticles2D2" type="CPUParticles2D" parent="."]
-position = Vector2(5075, 89)
-amount = 5
-lifetime = 3.0
-randomness = 0.1
-texture = ExtResource("6_s1x42")
-emission_shape = 1
-emission_sphere_radius = 6.47
-direction = Vector2(-1, -1)
-spread = 41.82
-gravity = Vector2(0, 0)
-initial_velocity_min = 50.51
-initial_velocity_max = 151.51
-angle_min = -43.6
-angle_max = 58.2
-scale_amount_min = 0.5
-color_ramp = SubResource("Gradient_ca1xc")
+[node name="MusicParticle" parent="." instance=ExtResource("7_763q6")]
+position = Vector2(5072, 88)
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("10_irk2n")]
