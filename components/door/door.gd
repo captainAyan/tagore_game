@@ -23,12 +23,12 @@ func _ready():
 
 
 func _on_body_entered(body):
-	if !oneWay:
+	if !oneWay and body.name == player.name:
 		$CanvasLayer/DoorEnterButton.show()
 
 
 func _on_body_exited(body):
-	if !oneWay:
+	if !oneWay and body.name == player.name:
 		$CanvasLayer/DoorEnterButton.hide()
 
 
