@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://buls6myq57hbe"]
+[gd_scene load_steps=20 format=3 uid="uid://buls6myq57hbe"]
 
 [ext_resource type="Script" path="res://scenes/thakurbari_scenes/2nd_floor_scenes/bedroom_scene/bedroom_scene.gd" id="1_k7dfy"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="2_bt6h3"]
@@ -10,8 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://sbaiant8wohb" path="res://characters/player/player.tscn" id="10_irk2n"]
 [ext_resource type="PackedScene" uid="uid://csq3w1g5yh0kj" path="res://components/door/door.tscn" id="10_jc67g"]
 [ext_resource type="PackedScene" uid="uid://blbhqre5hf5v6" path="res://components/controller/controller.tscn" id="12_41syf"]
+[ext_resource type="PackedScene" uid="uid://rwn73tit8by4" path="res://components/cinematics/cinematic_black_bar/cinematic_black_bars.tscn" id="13_17kx7"]
 [ext_resource type="PackedScene" uid="uid://bmkccaxf6cfhs" path="res://components/pendulum/pendulum.tscn" id="13_e21l2"]
 [ext_resource type="PackedScene" uid="uid://ci7xg03cgk7k0" path="res://components/clock_hand/clock_hands.tscn" id="13_fc3gx"]
+[ext_resource type="PackedScene" uid="uid://dugwt001d02vg" path="res://components/cinematics/cinematic_fade/cinematic_fade.tscn" id="14_6vu5y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_11dbp"]
 texture = ExtResource("9_0iav5")
@@ -216,10 +218,102 @@ sources/0 = SubResource("TileSetAtlasSource_11dbp")
 
 [sub_resource type="Animation" id="Animation_cebjd"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:movable")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Controller")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player/Camera2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"make_current"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CinematicBlackBars")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"remove_bar"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath("CinematicFade")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"transparent_screen"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Player:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-853, 552)]
+}
 
 [sub_resource type="Animation" id="Animation_c56cw"]
 resource_name = "wake_up_anim"
-length = 43.0
+length = 45.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -227,7 +321,7 @@ tracks/0/path = NodePath("CutSceneCamera:zoom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5, 10, 15, 20, 25, 31, 37),
+"times": PackedFloat32Array(2, 7, 12, 17, 22, 27, 33, 39),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(2, 2), Vector2(1.5, 1.5), Vector2(2, 2), Vector2(1.8, 1.8), Vector2(3, 3), Vector2(3.2, 3.2), Vector2(3.2, 3.2), Vector2(2.8, 2.8)]
@@ -239,7 +333,7 @@ tracks/1/path = NodePath("CutSceneCamera")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 10, 20, 31),
+"times": PackedFloat32Array(0, 12, 22, 33),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
 "args": [],
@@ -262,7 +356,7 @@ tracks/2/path = NodePath("CutSceneCamera2")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(5, 15, 25),
+"times": PackedFloat32Array(7, 17, 27),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
@@ -282,7 +376,7 @@ tracks/3/path = NodePath("CutSceneCamera2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(5, 10.1, 15, 20, 25, 31),
+"times": PackedFloat32Array(7, 12, 17, 22, 27, 33),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(2792, 40), Vector2(3000, 40), Vector2(6928, 240), Vector2(6928, 280), Vector2(-540, 568), Vector2(-580, 568)]
@@ -294,7 +388,7 @@ tracks/4/path = NodePath("CutSceneCamera2:zoom")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(5, 15, 25),
+"times": PackedFloat32Array(7, 17, 27),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [Vector2(1, 1), Vector2(1.8, 1.8), Vector2(2.5, 2.5)]
@@ -306,7 +400,7 @@ tracks/5/path = NodePath("CutSceneCamera:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 10, 20, 31),
+"times": PackedFloat32Array(2, 12, 22, 33),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2(360, -304), Vector2(5120, 112), Vector2(-648, 248), Vector2(-840, 400)]
@@ -318,7 +412,7 @@ tracks/6/path = NodePath("Player:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 29, 30),
+"times": PackedFloat32Array(2, 31, 32),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [-1.5708, -1.5708, 0.0]
@@ -330,7 +424,7 @@ tracks/7/path = NodePath("Player/Camera2D")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(40),
+"times": PackedFloat32Array(42),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -344,7 +438,7 @@ tracks/8/path = NodePath("Player:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(29, 30),
+"times": PackedFloat32Array(31, 32),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-853, 552), Vector2(-853, 515)]
@@ -352,14 +446,89 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("ColorRect:color")
+tracks/9/path = NodePath("Player:movable")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.3, 3, 34, 37, 40, 43),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"times": PackedFloat32Array(2, 45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Controller")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2, 45),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"hide"
+}, {
+"args": [],
+"method": &"show"
+}]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CinematicFade")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 2, 6, 11, 16, 21, 26, 32, 38, 45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"black_screen"
+}, {
+"args": [],
+"method": &"fade_to_transparent"
+}, {
+"args": [],
+"method": &"fade_out_and_in"
+}, {
+"args": [],
+"method": &"fade_out_and_in"
+}, {
+"args": [],
+"method": &"fade_out_and_in"
+}, {
+"args": [],
+"method": &"fade_out_and_in"
+}, {
+"args": [],
+"method": &"fade_out_and_in"
+}, {
+"args": [],
+"method": &"fade_out_and_in"
+}, {
+"args": [],
+"method": &"fade_to_black"
+}, {
+"args": [],
+"method": &"fade_to_transparent"
+}]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CinematicBlackBars")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 45),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"add_bar"
+}, {
+"args": [],
+"method": &"remove_bar"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2oqma"]
@@ -417,7 +586,7 @@ position = Vector2(5072, 88)
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("10_irk2n")]
-position = Vector2(-853, 515)
+position = Vector2(-853, 552)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(11, -195)
@@ -440,13 +609,6 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(262135, 458752, 9, 327671, 458752, 10, 393207, 458752, 11, 393208, 524288, 11, 393209, 524288, 11, 393210, 524288, 11, 393211, 524288, 11, 327673, 524288, 9, 327676, 720896, 10, 393212, 720896, 11)
 metadata/_edit_lock_ = true
 
-[node name="CorridorDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_jc67g")]
-position = Vector2(7632, 432)
-button_label = "Enter Corridor"
-scene_file = "res://scenes/thakurbari_scenes/2nd_floor_scenes/2nd_floor_corridor_scene/2nd_floor_corridor_scene.tscn"
-player = NodePath("../Player")
-metadata/_edit_lock_ = true
-
 [node name="TableClockHands" parent="." instance=ExtResource("13_fc3gx")]
 position = Vector2(-648, 253)
 scale = Vector2(0.75, 0.75)
@@ -466,21 +628,24 @@ level_name = "Bedroom Scene"
 
 [node name="Controller" parent="." instance=ExtResource("12_41syf")]
 
+[node name="CinematicBlackBars" parent="." instance=ExtResource("13_17kx7")]
+
+[node name="CinematicFade" parent="." instance=ExtResource("14_6vu5y")]
+
+[node name="CorridorDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_jc67g")]
+position = Vector2(7632, 432)
+button_label = "Enter Corridor"
+scene_file = "res://scenes/thakurbari_scenes/2nd_floor_scenes/2nd_floor_corridor_scene/2nd_floor_corridor_scene.tscn"
+player = NodePath("../Player")
+metadata/_edit_lock_ = true
+
 [node name="CutSceneCamera" type="Camera2D" parent="."]
-position = Vector2(-840, 400)
-zoom = Vector2(3.15333, 3.15333)
+position = Vector2(360, -304)
+zoom = Vector2(1.53, 1.53)
 
 [node name="CutSceneCamera2" type="Camera2D" parent="."]
-position = Vector2(-580, 568)
+position = Vector2(2792, 40)
 zoom = Vector2(2.5, 2.5)
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1296.0
-offset_top = -1296.0
-offset_right = 2608.0
-offset_bottom = 1440.0
-color = Color(0, 0, 0, 0)
-metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
