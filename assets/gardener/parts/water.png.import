@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcb7josdt6sam"
-path="res://.godot/imported/body.png-0d5a1ce57637a08f1faf4a32392f2c57.ctex"
+uid="uid://blvtkxdn4obxh"
+path="res://.godot/imported/water.png-7b29835d007ff40dd6c13a81214c0892.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/body.png"
-dest_files=["res://.godot/imported/body.png-0d5a1ce57637a08f1faf4a32392f2c57.ctex"]
+source_file="res://assets/gardener/parts/water.png"
+dest_files=["res://.godot/imported/water.png-7b29835d007ff40dd6c13a81214c0892.ctex"]
 
 [params]
 

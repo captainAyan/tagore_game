@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://decsr2p5ygqvj"
-path="res://.godot/imported/right_shoe.png-c1e990352ca60d05a3f24720b6d54f94.ctex"
+uid="uid://13vq8df6oeqb"
+path="res://.godot/imported/can.png-069d9f09a015b609d3bb51d7cff93376.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/right_shoe.png"
-dest_files=["res://.godot/imported/right_shoe.png-c1e990352ca60d05a3f24720b6d54f94.ctex"]
+source_file="res://assets/gardener/parts/can.png"
+dest_files=["res://.godot/imported/can.png-069d9f09a015b609d3bb51d7cff93376.ctex"]
 
 [params]
 

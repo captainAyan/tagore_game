@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beltumkakqqvo"
-path="res://.godot/imported/full.png-39af23515baeb80739be085ca43d1833.ctex"
+uid="uid://doayhcyxi84im"
+path="res://.godot/imported/left_shoe.png-9f4adb715dce204f5e9f4c47501f4212.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/full.png"
-dest_files=["res://.godot/imported/full.png-39af23515baeb80739be085ca43d1833.ctex"]
+source_file="res://assets/tagore/left_shoe.png"
+dest_files=["res://.godot/imported/left_shoe.png-9f4adb715dce204f5e9f4c47501f4212.ctex"]
 
 [params]
 
