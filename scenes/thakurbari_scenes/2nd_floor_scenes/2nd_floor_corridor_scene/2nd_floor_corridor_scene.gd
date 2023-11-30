@@ -4,6 +4,8 @@ extends Node2D
 @onready var plant_triggers = $PlantTriggers.get_children()
 var next_plant_index = 0
 
+func _ready():
+	$Gardener.position.x = randi_range(1000, 9000) # spawn gardener at random position
 
 func _on_gardener_finding_next_target():
 	$Gardener.set_target_plant_location(plant_triggers[next_plant_index].position, next_plant_index)
@@ -12,3 +14,9 @@ func _on_gardener_finding_next_target():
 		next_plant_index = randi_range(4, 7)
 	else:
 		next_plant_index = randi_range(0, 3)
+
+
+func _on_gardener_entered_dialog_trigger():
+	$Gardener.start_talking($Gardener.position)
+	$Player.movable = false
+#	$Gardener.stop_talking()

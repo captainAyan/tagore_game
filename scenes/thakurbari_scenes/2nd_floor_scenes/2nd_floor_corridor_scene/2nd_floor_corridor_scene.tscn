@@ -49,7 +49,6 @@ metadata/_edit_lock_ = true
 
 [node name="Gardener" parent="." instance=ExtResource("3_fmyv2")]
 position = Vector2(9416, 1408)
-metadata/_edit_lock_ = true
 
 [node name="PlantTriggers" type="Node2D" parent="."]
 
@@ -133,4 +132,5 @@ libraries = {
 "": SubResource("AnimationLibrary_h8wnh")
 }
 
+[connection signal="entered_dialog_trigger" from="Gardener" to="." method="_on_gardener_entered_dialog_trigger"]
 [connection signal="finding_next_target" from="Gardener" to="." method="_on_gardener_finding_next_target"]

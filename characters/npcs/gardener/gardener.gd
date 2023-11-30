@@ -1,8 +1,10 @@
 extends Node2D
 
 signal finding_next_target
+signal entered_dialog_trigger
+signal exited_dialog_trigger
 
-enum State {IDLE, WATERING, MOVING}
+enum State {IDLE, WATERING, MOVING, TALKING}
 
 var current_state = State.IDLE
 var target_plant_trigger_position:Vector2
@@ -24,21 +26,22 @@ func _process(delta):
 	
 	elif current_state == State.MOVING: 
 		$AnimationPlayer.play("walk_anim", -1, 2, false)
+		var velocity = Vector2.ZERO
 		
 		if position.x < target_plant_trigger_position.x:
-			var velocity = Vector2.ZERO
 			velocity.x += 200
-			position += velocity * delta
 			scale.x = 1
-		
-		elif position.x > target_plant_trigger_position.x:
-			var velocity = Vector2.ZERO
-			velocity.x += 200
-			position -= velocity * delta
+		else:
+			velocity.x -= 200
 			scale.x = -1
+		
+		position += velocity * delta
 	
 	elif current_state == State.WATERING:
 		$AnimationPlayer.play("watering_anim")
+	
+	elif current_state == State.TALKING:
+		$AnimationPlayer.play("idle_anim")
 
 func _on_plant_finder_area_2d_area_entered(area):
 	if area.is_in_group("plant_trigger") and area.ID == target_plant_trigger_id:
@@ -47,3 +50,20 @@ func _on_plant_finder_area_2d_area_entered(area):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "watering_anim":
 		finding_next_target.emit()
+
+func start_talking(gardener_position:Vector2):
+	if current_state != State.TALKING:
+		current_state = State.TALKING
+		if position.x > gardener_position.x:
+			scale.x = -1
+		else:
+			scale.x = 1
+
+func stop_talking():
+	finding_next_target.emit()
+
+func _on_dialog_trigger_area_2d_body_entered(body):
+	entered_dialog_trigger.emit()
+
+func _on_dialog_trigger_area_2d_body_exited(body):
+	exited_dialog_trigger.emit()
