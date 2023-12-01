@@ -15,7 +15,7 @@ func _on_gardener_finding_next_target():
 	$Gardener.set_target_plant_location(plant_triggers[next_plant_index].position, next_plant_index)
 	
 	if next_plant_index < 3:
-		next_plant_index = randi_range(3, 6)
+		next_plant_index = randi_range(3, 5)
 	else:
 		next_plant_index = randi_range(0, 2)
 
