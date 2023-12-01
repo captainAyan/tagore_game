@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://uubcyj5jowo3"]
+[gd_scene load_steps=13 format=3 uid="uid://uubcyj5jowo3"]
 
 [ext_resource type="Script" path="res://scenes/thakurbari_scenes/2nd_floor_scenes/2nd_floor_corridor_scene/2nd_floor_corridor_scene.gd" id="1_nypv3"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="2_wysm2"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://csq3w1g5yh0kj" path="res://components/door/door.tscn" id="5_7y2dy"]
 [ext_resource type="PackedScene" uid="uid://blbhqre5hf5v6" path="res://components/controller/controller.tscn" id="6_0dbx0"]
 [ext_resource type="PackedScene" uid="uid://djmpjbnmlm802" path="res://characters/npcs/gardener/plant_trigger.tscn" id="8_m8cxb"]
+[ext_resource type="PackedScene" uid="uid://cgwo5xeo2kum6" path="res://components/dialog/dialog.tscn" id="9_45lkk"]
 
 [sub_resource type="Animation" id="Animation_s88na"]
 resource_name = "RESET"
@@ -83,6 +84,8 @@ ID = 6
 position = Vector2(648, 1560)
 ID = 7
 
+[node name="GardenerDialog" parent="." instance=ExtResource("9_45lkk")]
+
 [node name="Player" parent="." instance=ExtResource("3_veexk")]
 position = Vector2(12528, 1395)
 
@@ -134,3 +137,4 @@ libraries = {
 
 [connection signal="entered_dialog_trigger" from="Gardener" to="." method="_on_gardener_entered_dialog_trigger"]
 [connection signal="finding_next_target" from="Gardener" to="." method="_on_gardener_finding_next_target"]
+[connection signal="dialog_over" from="GardenerDialog" to="." method="_on_gardener_dialog_dialog_over"]

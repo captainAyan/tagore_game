@@ -5,6 +5,10 @@ extends Node2D
 var next_plant_index = 0
 
 func _ready():
+	$GardenerDialog.dialogs = [
+		"Hello world",
+		"This is Tagore game",
+	]
 	$Gardener.position.x = randi_range(1000, 9000) # spawn gardener at random position
 
 func _on_gardener_finding_next_target():
@@ -19,4 +23,12 @@ func _on_gardener_finding_next_target():
 func _on_gardener_entered_dialog_trigger():
 	$Gardener.start_talking($Gardener.position)
 	$Player.movable = false
-#	$Gardener.stop_talking()
+	$Controller.hide()
+	$GardenerDialog.start()
+
+
+func _on_gardener_dialog_dialog_over():
+	$Gardener.stop_talking()
+	$Player.movable = true
+	$Controller.show()
+	pass # Replace with function body.
