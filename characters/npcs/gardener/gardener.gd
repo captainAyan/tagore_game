@@ -63,7 +63,9 @@ func stop_talking():
 	finding_next_target.emit()
 
 func _on_dialog_trigger_area_2d_body_entered(body):
-	entered_dialog_trigger.emit()
+	if body.name == "Player":
+		entered_dialog_trigger.emit()
 
 func _on_dialog_trigger_area_2d_body_exited(body):
-	exited_dialog_trigger.emit()
+	if body.name == "Player":
+		exited_dialog_trigger.emit()
