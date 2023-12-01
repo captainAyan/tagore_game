@@ -21,11 +21,11 @@ func set_target_plant_location(plant_trigger_position:Vector2, plant_trigger_id)
 
 func _process(delta):
 	if current_state == State.IDLE: # when the scene is loaded
-		$AnimationPlayer.play("idle_anim")
+		$AnimationPlayer.play("idle_anim", 1, 2, false)
 		finding_next_target.emit()
 	
 	elif current_state == State.MOVING: 
-		$AnimationPlayer.play("walk_anim", -1, 2, false)
+		$AnimationPlayer.play("walk_anim", 1, 2, false)
 		var velocity = Vector2.ZERO
 		
 		if position.x < target_plant_trigger_position.x:
@@ -38,10 +38,10 @@ func _process(delta):
 		position += velocity * delta
 	
 	elif current_state == State.WATERING:
-		$AnimationPlayer.play("watering_anim")
+		$AnimationPlayer.play("watering_anim", 1, 2, false)
 	
 	elif current_state == State.TALKING:
-		$AnimationPlayer.play("idle_anim")
+		$AnimationPlayer.play("idle_anim", 1, 2, false)
 
 func _on_plant_finder_area_2d_area_entered(area):
 	if area.is_in_group("plant_trigger") and area.ID == target_plant_trigger_id:
