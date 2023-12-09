@@ -40,6 +40,10 @@ layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array(655373, 393217, 0, 655385, 131073, 10, 655383, 655361, 6, 720915, 458753, 5, 655379, 393217, 5, 655378, 393217, 4, 589842, 458753, 5, 720914, 458753, 4, 720916, 458753, 4, 655380, 393217, 4, 589843, 458753, 4, 524306, 458753, 3, 524308, 327681, 0, 720929, 393217, 3, 655393, 458753, 3, 589857, 393217, 5, 589844, 458753, 5, 458770, 786433, 7, 655375, 458753, 5)
 metadata/_edit_lock_ = true
 
+[node name="MusicParticle" parent="." instance=ExtResource("3_4tf3t")]
+position = Vector2(520, 1368)
+metadata/_edit_lock_ = true
+
 [node name="Player" parent="." instance=ExtResource("2_pou1p")]
 position = Vector2(1001, 1791)
 
@@ -62,10 +66,6 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(786432, 458753, 12, 851968, 458753, 13, 917504, 458753, 14, 917505, 524289, 14, 917506, 524289, 14, 917507, 524289, 14, 917508, 524289, 14, 851970, 524289, 9, 851973, 589825, 13, 917509, 589825, 14)
-metadata/_edit_lock_ = true
-
-[node name="MusicParticle" parent="." instance=ExtResource("3_4tf3t")]
-position = Vector2(520, 1368)
 metadata/_edit_lock_ = true
 
 [node name="KoiPond" type="Sprite2D" parent="."]

@@ -40,6 +40,10 @@ layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array(655374, 327681, 9, 720910, 327681, 10, 786446, 327681, 11, 655375, 393217, 9, 720911, 393217, 10, 786447, 393217, 11, 589843, 393217, 5, 655379, 458753, 3, 720915, 393217, 3, 720916, 458753, 3, 655380, 393217, 5, 524308, 655361, 6, 655389, 524289, 0, 524320, 131073, 0, 524295, 393217, 3, 589831, 393217, 4, 655367, 458753, 5, 720903, 458753, 4, 458759, 131073, 12)
 metadata/_edit_lock_ = true
 
+[node name="MusicParticle" parent="." instance=ExtResource("4_vi0i1")]
+position = Vector2(1480, 1528)
+metadata/_edit_lock_ = true
+
 [node name="Player" parent="." instance=ExtResource("2_dwmh7")]
 position = Vector2(1001, 1791)
 
@@ -68,10 +72,6 @@ metadata/_edit_lock_ = true
 position = Vector2(4176, 1152)
 scale = Vector2(0.44, 0.433311)
 texture = ExtResource("3_vd6eg")
-metadata/_edit_lock_ = true
-
-[node name="MusicParticle" parent="." instance=ExtResource("4_vi0i1")]
-position = Vector2(1480, 1528)
 metadata/_edit_lock_ = true
 
 [node name="Pendulum" parent="." instance=ExtResource("8_ac07q")]
