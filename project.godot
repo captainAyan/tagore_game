@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 LastSceneTracker="*res://globals/last_scene_tracker.gd"
+StorylineTracker="*res://globals/storyline_tracker.gd"
 
 [display]
 
