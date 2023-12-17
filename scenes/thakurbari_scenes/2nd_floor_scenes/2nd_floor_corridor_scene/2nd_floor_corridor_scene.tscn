@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://csq3w1g5yh0kj" path="res://components/door/door.tscn" id="5_7y2dy"]
 [ext_resource type="PackedScene" uid="uid://blbhqre5hf5v6" path="res://components/controller/controller.tscn" id="6_0dbx0"]
 [ext_resource type="PackedScene" uid="uid://djmpjbnmlm802" path="res://characters/npcs/gardener/plant_trigger.tscn" id="8_m8cxb"]
-[ext_resource type="PackedScene" uid="uid://cgwo5xeo2kum6" path="res://components/dialog/dialog.tscn" id="9_45lkk"]
+[ext_resource type="PackedScene" uid="uid://t8jp1w7vj0lv" path="res://components/dialog/dialog.tscn" id="9_45lkk"]
 
 [sub_resource type="Animation" id="Animation_s88na"]
 resource_name = "RESET"
@@ -84,6 +84,7 @@ ID = 5
 metadata/_edit_lock_ = true
 
 [node name="GardenerDialog" parent="." instance=ExtResource("9_45lkk")]
+dialogs = Array[String](["Hello World", "This is Tagore Game"])
 
 [node name="Player" parent="." instance=ExtResource("3_veexk")]
 position = Vector2(12528, 1395)

@@ -1,9 +1,12 @@
 extends CanvasLayer
 
 signal dialog_over
+signal entered
 
 var current_dialog_index = 0
-var dialogs:PackedStringArray
+
+## Dialog script
+@export var dialogs: Array[String] = []
 
 func _ready():
 	self.hide()
@@ -21,6 +24,7 @@ func _on_previous_dialog_button_pressed():
 func _on_next_dialog_button_pressed():
 	if current_dialog_index == dialogs.size() - 1: # on last dialog, 'next' is used as exit
 		self.hide()
+		current_dialog_index = 0
 		dialog_over.emit()
 	else:
 		current_dialog_index += 1
@@ -32,11 +36,6 @@ func _set_button_disabilities():
 		$PreviousDialogButton.disabled = true
 	else:
 		$PreviousDialogButton.disabled = false
-	
-#	if dialogs.size()-1 == current_dialog_index:
-#		$NextDialogButton.disabled = true
-#	else:
-#		$NextDialogButton.disabled = false
 
 func _show_dialog_at_index():
 	$Label.text = dialogs[current_dialog_index]
