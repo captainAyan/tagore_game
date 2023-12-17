@@ -59,7 +59,7 @@ metadata/_edit_lock_ = true
 [node name="StairsDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_hbuvh")]
 position = Vector2(1008, 1728)
 button_label = "Enter Stairs"
-scene_file = "res://scenes/thakurbari_scenes/2nd_floor_corridor_3rd_floor_corridor_stairs_scene/2nd_floor_corridor_3rd_floor_corridor_stairs_scene.tscn"
+scene_file = "res://scenes/thakurbari_scenes/main_staircase_scene/main_staircase_scene.tscn"
 player = NodePath("../Player")
 metadata/_edit_lock_ = true
 
