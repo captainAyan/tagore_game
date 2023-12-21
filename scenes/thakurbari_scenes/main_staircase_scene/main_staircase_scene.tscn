@@ -42,6 +42,12 @@ limit_left = 0
 limit_right = 10656
 editor_draw_limits = true
 
+[node name="1ndFloorCorridorDoor2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_8ugw0")]
+position = Vector2(720, 7344)
+button_label = "Enter Corridor"
+scene_file = "res://scenes/thakurbari_scenes/1st_floor_scenes/1st_floor_corridor_scene/1st_floor_corridor_scene.tscn"
+player = NodePath("../Player")
+
 [node name="2ndFloorCorridorDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_8ugw0")]
 position = Vector2(5328, 4464)
 button_label = "Enter Corridor"
