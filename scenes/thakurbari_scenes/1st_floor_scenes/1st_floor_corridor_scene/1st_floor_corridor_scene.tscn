@@ -1,12 +1,57 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwviumm2mxkcx"]
+[gd_scene load_steps=15 format=3 uid="uid://cwviumm2mxkcx"]
 
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="1_3kyeh"]
+[ext_resource type="Script" path="res://scenes/thakurbari_scenes/1st_floor_scenes/1st_floor_corridor_scene/1st_floor_corridor_scene.gd" id="1_jwhti"]
 [ext_resource type="PackedScene" uid="uid://sbaiant8wohb" path="res://characters/player/player.tscn" id="2_dol2l"]
 [ext_resource type="PackedScene" uid="uid://csq3w1g5yh0kj" path="res://components/door/door.tscn" id="3_e5l5a"]
 [ext_resource type="PackedScene" uid="uid://hk232l4ks1qd" path="res://components/hud/hud.tscn" id="4_lkjab"]
 [ext_resource type="PackedScene" uid="uid://blbhqre5hf5v6" path="res://components/controller/controller.tscn" id="5_5sp7s"]
+[ext_resource type="Texture2D" uid="uid://b8garq5edjfv4" path="res://assets/cat/body.png" id="7_yi6fk"]
+[ext_resource type="Texture2D" uid="uid://b2wrc1ewtjay6" path="res://assets/cat/head.png" id="8_xpf5r"]
+[ext_resource type="Texture2D" uid="uid://dgduw8s4q5drp" path="res://assets/cat/tail.png" id="9_0frnh"]
+[ext_resource type="Texture2D" uid="uid://b63indsf5hrs5" path="res://assets/cat/paw.png" id="10_6uabl"]
+[ext_resource type="Texture2D" uid="uid://cod7dx72h7brq" path="res://assets/particles/sleep_particle.png" id="11_a8qro"]
+
+[sub_resource type="Animation" id="Animation_v11nr"]
+resource_name = "sleeping_anim"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.15)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(832, 2064), Vector2(832, 2058)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wu2ld"]
+_data = {
+"sleeping_anim": SubResource("Animation_v11nr")
+}
+
+[sub_resource type="Gradient" id="Gradient_yb5u3"]
+offsets = PackedFloat32Array(0, 0.192053, 0.589404, 0.980132)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
 
 [node name="1stFloorCorridorScene" type="Node2D"]
+script = ExtResource("1_jwhti")
 
 [node name="BackgroundTileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_3kyeh")
@@ -65,3 +110,52 @@ metadata/_edit_lock_ = true
 level_name = "1st Floor Corridor Scene"
 
 [node name="Controller" parent="." instance=ExtResource("5_5sp7s")]
+
+[node name="Cat" type="Node2D" parent="."]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="LeftPaw" type="Sprite2D" parent="Cat"]
+position = Vector2(872, 2120)
+texture = ExtResource("10_6uabl")
+
+[node name="Tail" type="Sprite2D" parent="Cat"]
+position = Vector2(800, 2104)
+texture = ExtResource("9_0frnh")
+
+[node name="Body" type="Sprite2D" parent="Cat"]
+position = Vector2(832, 2064)
+texture = ExtResource("7_yi6fk")
+
+[node name="RightPaw" type="Sprite2D" parent="Cat"]
+position = Vector2(912, 2123)
+texture = ExtResource("10_6uabl")
+
+[node name="Head" type="Sprite2D" parent="Cat"]
+position = Vector2(928, 2080)
+rotation = 0.523599
+texture = ExtResource("8_xpf5r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cat"]
+libraries = {
+"": SubResource("AnimationLibrary_wu2ld")
+}
+
+[node name="SleepingCPUParticles2D" type="CPUParticles2D" parent="Cat"]
+position = Vector2(976, 2048)
+amount = 2
+lifetime = 3.0
+randomness = 0.1
+texture = ExtResource("11_a8qro")
+emission_shape = 1
+emission_sphere_radius = 6.47
+direction = Vector2(0.5, -1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+angle_min = -15.0
+angle_max = 15.0
+scale_amount_min = 0.4
+scale_amount_max = 0.8
+color_ramp = SubResource("Gradient_yb5u3")
