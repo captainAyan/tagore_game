@@ -25,19 +25,27 @@ autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="PreviousDialogButton" type="Button" parent="."]
-offset_left = 288.0
+anchors_preset = -1
+anchor_left = -0.0277778
+anchor_right = 0.0277778
+offset_left = 256.0
 offset_top = 448.0
-offset_right = 352.0
+offset_right = 320.0
 offset_bottom = 576.0
 text = "<<"
+flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="NextDialogButton" type="Button" parent="."]
-offset_left = 800.0
+anchors_preset = -1
+anchor_left = -0.0277778
+anchor_right = 0.0277778
+offset_left = 832.0
 offset_top = 448.0
-offset_right = 864.0
+offset_right = 896.0
 offset_bottom = 576.0
 text = ">>"
+flat = true
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="PreviousDialogButton" to="." method="_on_previous_dialog_button_pressed"]
