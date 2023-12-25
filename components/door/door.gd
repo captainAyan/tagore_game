@@ -1,5 +1,8 @@
 extends Area2D
 
+signal door_entered
+signal tried_entering_locked_door
+
 ## Label that will appear on the button
 @export var button_label = ""
 
@@ -8,6 +11,9 @@ extends Area2D
 
 ## Allows only spawning, doesn't allow entering
 @export var oneWay:bool = false
+
+## A Locked door will send tried_entering_locked_door signal (not change the scene)
+@export var locked:bool = false
 
 @export var player:CharacterBody2D
 
@@ -34,7 +40,16 @@ func _on_body_exited(body):
 
 func _on_door_enter_button_pressed():
 	if !oneWay:
-		# setting the last scene to global LastSceneTracker
-		LastSceneTracker.last_scene_name = get_tree().current_scene.scene_file_path
-		# loading entering scene
-		get_tree().change_scene_to_file(scene_file)
+		if !locked:
+			enter_door()
+		else:
+			tried_entering_locked_door.emit()
+
+
+func enter_door():
+	door_entered.emit()
+	# setting the last scene to global LastSceneTracker
+	LastSceneTracker.last_scene_name = get_tree().current_scene.scene_file_path
+	# loading entering scene
+	get_tree().change_scene_to_file(scene_file)
+
