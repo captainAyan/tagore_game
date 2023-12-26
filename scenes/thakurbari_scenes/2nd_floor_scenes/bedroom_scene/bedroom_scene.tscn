@@ -593,7 +593,9 @@ position = Vector2(11, -195)
 scale = Vector2(48315.3, -4952.72)
 zoom = Vector2(0.3, 0.3)
 limit_left = 0
+limit_top = 0
 limit_right = 10368
+limit_bottom = 2736
 editor_draw_limits = true
 
 [node name="ForegroundTileMap" type="TileMap" parent="."]
