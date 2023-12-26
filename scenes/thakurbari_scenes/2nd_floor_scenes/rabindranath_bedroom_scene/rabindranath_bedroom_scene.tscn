@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://buls6myq57hbe"]
 
-[ext_resource type="Script" path="res://scenes/thakurbari_scenes/2nd_floor_scenes/bedroom_scene/bedroom_scene.gd" id="1_k7dfy"]
+[ext_resource type="Script" path="res://scenes/thakurbari_scenes/2nd_floor_scenes/rabindranath_bedroom_scene/rabindranath_bedroom_scene.gd" id="1_k7dfy"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="2_bt6h3"]
 [ext_resource type="Texture2D" uid="uid://cvh7s0gpdtfnc" path="res://assets/paintings/Dwarakanath_Tagore.jpg" id="3_frs6y"]
 [ext_resource type="Texture2D" uid="uid://dnyi2wqj2j6y4" path="res://assets/paintings/old indian map.jpg" id="4_os3w0"]
@@ -626,7 +626,7 @@ position = Vector2(360, -296)
 metadata/_edit_lock_ = true
 
 [node name="HUD" parent="." instance=ExtResource("8_jbmau")]
-level_name = "Bedroom Scene"
+level_name = "Rabindranath Bedroom Scene"
 
 [node name="Controller" parent="." instance=ExtResource("12_41syf")]
 
