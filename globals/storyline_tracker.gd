@@ -21,7 +21,7 @@ const states:Array = [
 var current_state_index:int = 0
 var current_state_completed_objectives:Array[String] = []
 
-func complete_objective(objective):	
+func complete_objective(objective):
 	if states[current_state_index].objectives.has(objective) and not current_state_completed_objectives.has(objective):
 		current_state_completed_objectives.append(objective)
 		print("STORYLINE TRACKER: OBJECTIVE FINISHED ", objective)
