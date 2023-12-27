@@ -2,7 +2,7 @@ extends Node2D
 
 # for Gardener NPC
 @onready var plant_triggers = $PlantTriggers.get_children()
-var next_plant_index = 0
+var next_plant_index:int = 0
 
 func _ready():
 	$Gardener.position.x = randi_range(1000, 9000) # spawn gardener at random position

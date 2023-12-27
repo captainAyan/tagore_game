@@ -3,7 +3,7 @@ extends CanvasLayer
 signal dialog_over
 signal entered
 
-var current_dialog_index = 0
+var current_dialog_index:int = 0
 
 ## Dialog script
 @export var dialogs: Array[String] = []

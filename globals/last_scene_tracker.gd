@@ -1,4 +1,4 @@
 extends Node
 
 
-var last_scene_name = ""
+var last_scene_name:String = ""

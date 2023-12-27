@@ -4,10 +4,10 @@ signal door_entered
 signal tried_entering_locked_door
 
 ## Label that will appear on the button
-@export var button_label = ""
+@export var button_label:String = ""
 
 ## The scene that will be loaded
-@export_file var scene_file = ""
+@export_file var scene_file:String = ""
 
 ## Allows only spawning, doesn't allow entering
 @export var oneWay:bool = false

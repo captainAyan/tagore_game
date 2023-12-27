@@ -3,13 +3,13 @@ extends CharacterBody2D
 @export var movable:bool = true
 
 #const SPEED = 800.0
-const SPEED = 2000.0 # DEV MODE
-const JUMP_VELOCITY = -1000.0
+const SPEED:float = 2000.0 # DEV MODE
+const JUMP_VELOCITY:float = -1000.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity:float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-var last_character_face_direction = 1 # 1 is right and -1 is left
+var last_character_face_direction:int = 1 # 1 is right and -1 is left
 
 func _process(delta):
 	if velocity.x != 0:
@@ -27,7 +27,7 @@ func _process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction:float = Input.get_axis("ui_left", "ui_right")
 	if direction and movable:
 		velocity.x = direction * SPEED
 	else:

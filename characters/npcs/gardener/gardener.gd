@@ -6,7 +6,7 @@ signal exited_dialog_trigger
 
 enum State {IDLE, WATERING, MOVING, TALKING}
 
-var current_state = State.IDLE
+var current_state:State = State.IDLE
 var target_plant_trigger_position:Vector2
 var target_plant_trigger_id:int
 
@@ -26,7 +26,7 @@ func _process(delta):
 	
 	elif current_state == State.MOVING: 
 		$AnimationPlayer.play("walk_anim", 1, 2, false)
-		var velocity = Vector2.ZERO
+		var velocity:Vector2 = Vector2.ZERO
 		
 		if position.x < target_plant_trigger_position.x:
 			velocity.x += 200
