@@ -51,10 +51,10 @@ func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "watering_anim":
 		finding_next_target.emit()
 
-func start_talking(gardener_position:Vector2):
+func start_talking(player_position:Vector2):
 	if current_state != State.TALKING:
 		current_state = State.TALKING
-		if position.x > gardener_position.x:
+		if position.x > player_position.x:
 			scale.x = -1
 		else:
 			scale.x = 1
