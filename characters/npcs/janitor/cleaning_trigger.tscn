@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnk1thqlba183"]
+
+[ext_resource type="Script" path="res://characters/npcs/janitor/cleaning_trigger.gd" id="1_1vbuj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08f1h"]
+
+[node name="CleaningTrigger" type="Area2D" groups=["cleaning_trigger"]]
+script = ExtResource("1_1vbuj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_08f1h")

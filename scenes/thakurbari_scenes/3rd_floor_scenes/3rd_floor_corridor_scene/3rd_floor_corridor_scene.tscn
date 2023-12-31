@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bh07qvqjxe7bq"]
+[gd_scene load_steps=10 format=3 uid="uid://bh07qvqjxe7bq"]
 
 [ext_resource type="Script" path="res://scenes/thakurbari_scenes/3rd_floor_scenes/3rd_floor_corridor_scene/3rd_floor_corridor_scene.gd" id="1_8s2x0"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="2_umdt0"]
 [ext_resource type="PackedScene" uid="uid://sbaiant8wohb" path="res://characters/player/player.tscn" id="3_wsaxx"]
 [ext_resource type="PackedScene" uid="uid://hk232l4ks1qd" path="res://components/hud/hud.tscn" id="4_68xxy"]
+[ext_resource type="PackedScene" uid="uid://0futhkneejul" path="res://characters/npcs/janitor/janitor.tscn" id="4_bk8cv"]
+[ext_resource type="PackedScene" uid="uid://t8jp1w7vj0lv" path="res://components/dialog/dialog.tscn" id="5_ba456"]
 [ext_resource type="PackedScene" uid="uid://csq3w1g5yh0kj" path="res://components/door/door.tscn" id="5_hbuvh"]
+[ext_resource type="PackedScene" uid="uid://cnk1thqlba183" path="res://characters/npcs/janitor/cleaning_trigger.tscn" id="5_q28yt"]
 [ext_resource type="PackedScene" uid="uid://blbhqre5hf5v6" path="res://components/controller/controller.tscn" id="6_fgl2p"]
 
 [node name="3rdFloorCorridorScene" type="Node2D"]
@@ -30,6 +33,31 @@ layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(458752, 1, 6, 524288, 1, 7, 589824, 1, 8, 655360, 1, 6, 458753, 65537, 6, 524289, 65537, 7, 589825, 65537, 8, 655361, 65537, 6, 458754, 65537, 6, 524290, 65537, 7, 589826, 65537, 8, 655362, 65537, 6, 458755, 131073, 6, 524291, 131073, 7, 589827, 131073, 8, 655363, 131073, 6, 393221, 720897, 0, 458757, 720897, 1, 524293, 720897, 2, 589829, 720897, 3, 655365, 720897, 4, 393222, 786433, 0, 458758, 786433, 1, 524294, 786433, 2, 589830, 786433, 3, 655366, 786433, 4, 393223, 851969, 0, 458759, 851969, 1, 524295, 851969, 2, 589831, 851969, 3, 655367, 851969, 4, 393224, 917505, 0, 458760, 917505, 1, 524296, 917505, 2, 589832, 917505, 3, 655368, 917505, 4, 589841, 655361, 7, 655377, 655361, 8, 393241, 720897, 0, 458777, 720897, 1, 524313, 720897, 2, 589849, 720897, 3, 655385, 720897, 4, 393242, 786433, 0, 458778, 786433, 1, 524314, 786433, 2, 589850, 786433, 3, 655386, 786433, 4, 393243, 851969, 0, 458779, 851969, 1, 524315, 851969, 2, 589851, 851969, 3, 655387, 851969, 4, 393244, 917505, 0, 458780, 917505, 1, 524316, 917505, 2, 589852, 917505, 3, 655388, 917505, 4, 589861, 720897, 7, 655397, 720897, 8, 393261, 720897, 0, 458797, 720897, 1, 524333, 720897, 2, 589869, 720897, 3, 655405, 720897, 4, 393262, 786433, 0, 458798, 786433, 1, 524334, 786433, 2, 589870, 786433, 3, 655406, 786433, 4, 393263, 851969, 0, 458799, 851969, 1, 524335, 851969, 2, 589871, 851969, 3, 655407, 851969, 4, 393264, 917505, 0, 458800, 917505, 1, 524336, 917505, 2, 589872, 917505, 3, 655408, 917505, 4, 589881, 655361, 7, 655417, 655361, 8, 393281, 720897, 0, 458817, 720897, 1, 524353, 720897, 2, 589889, 720897, 3, 655425, 720897, 4, 393282, 786433, 0, 458818, 786433, 1, 524354, 786433, 2, 589890, 786433, 3, 655426, 786433, 4, 393283, 851969, 0, 458819, 851969, 1, 524355, 851969, 2, 589891, 851969, 3, 655427, 851969, 4, 393284, 917505, 0, 458820, 917505, 1, 524356, 917505, 2, 589892, 917505, 3, 655428, 917505, 4, 655430, 655361, 6, 458826, 196609, 6, 524362, 196609, 7, 589898, 196609, 8, 655434, 196609, 6, 458827, 262145, 6, 524363, 262145, 7, 589899, 262145, 8, 655435, 262145, 6, 458828, 262145, 6, 524364, 262145, 7, 589900, 262145, 8, 655436, 262145, 6, 458829, 327681, 6, 524365, 327681, 7, 589901, 327681, 8, 655437, 327681, 6, 720896, 1, 7, 786432, 1, 8, 720897, 65537, 7, 786433, 65537, 8, 720898, 65537, 7, 786434, 65537, 8, 720899, 131073, 7, 786435, 131073, 8, 393220, 393217, 8, 786436, 786433, 7, 720901, 720897, 5, 786437, 720897, 6, 720902, 786433, 5, 786438, 786433, 6, 720903, 851969, 5, 786439, 851969, 6, 720904, 917505, 5, 786440, 917505, 6, 786441, 917505, 7, 720913, 393217, 6, 786449, 393217, 7, 393240, 393217, 8, 786456, 786433, 7, 720921, 720897, 5, 786457, 720897, 6, 720922, 786433, 5, 786458, 786433, 6, 720923, 851969, 5, 786459, 851969, 6, 720924, 917505, 5, 786460, 917505, 6, 786461, 917505, 7, 720933, 393217, 6, 786469, 393217, 7, 393260, 393217, 8, 786476, 917505, 7, 720941, 720897, 5, 786477, 720897, 6, 720942, 786433, 5, 786478, 786433, 6, 720943, 851969, 5, 786479, 851969, 6, 720944, 917505, 5, 786480, 917505, 6, 786481, 786433, 7, 720953, 393217, 6, 786489, 393217, 7, 393280, 393217, 8, 786496, 917505, 7, 720961, 720897, 5, 786497, 720897, 6, 720962, 786433, 5, 786498, 786433, 6, 720963, 851969, 5, 786499, 851969, 6, 720964, 917505, 5, 786500, 917505, 6, 786501, 786433, 7, 720966, 393217, 6, 786502, 393217, 7, 720970, 196609, 7, 786506, 196609, 8, 720971, 262145, 7, 786507, 262145, 8, 720972, 262145, 7, 786508, 262145, 8, 720973, 327681, 7, 786509, 327681, 8, 720974, 720897, 7, 786510, 720897, 8)
 metadata/_edit_lock_ = true
+
+[node name="Janitor" parent="." instance=ExtResource("4_bk8cv")]
+position = Vector2(1424, 1704)
+metadata/_edit_lock_ = true
+
+[node name="CleaningTriggers" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CleaningTrigger" parent="CleaningTriggers" instance=ExtResource("5_q28yt")]
+position = Vector2(2128, 1904)
+ID = 0
+
+[node name="CleaningTrigger2" parent="CleaningTriggers" instance=ExtResource("5_q28yt")]
+position = Vector2(2808, 1904)
+
+[node name="CleaningTrigger3" parent="CleaningTriggers" instance=ExtResource("5_q28yt")]
+position = Vector2(4984, 1904)
+ID = 2
+
+[node name="CleaningTrigger4" parent="CleaningTriggers" instance=ExtResource("5_q28yt")]
+position = Vector2(8104, 1904)
+ID = 3
+
+[node name="JanitorDialog" parent="." instance=ExtResource("5_ba456")]
+dialogs = Array[String](["Hello World", "This is  Janitor Dialog"])
 
 [node name="Player" parent="." instance=ExtResource("3_wsaxx")]
 position = Vector2(1001, 1664)
@@ -92,4 +120,7 @@ level_name = "3rd Floor Corridor Scene"
 
 [node name="Controller" parent="." instance=ExtResource("6_fgl2p")]
 
+[connection signal="entered_dialog_trigger" from="Janitor" to="." method="_on_janitor_entered_dialog_trigger"]
+[connection signal="finding_next_target" from="Janitor" to="." method="_on_janitor_finding_next_target"]
+[connection signal="dialog_over" from="JanitorDialog" to="." method="_on_janitor_dialog_dialog_over"]
 [connection signal="tried_entering_locked_door" from="DebendranathBedroomDoor" to="." method="_on_debendranath_bedroom_door_tried_entering_locked_door"]
