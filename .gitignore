@@ -16,3 +16,5 @@ mono_crash.*.json
 
 # Ignore build folder
 build/
+
+*.tmp
