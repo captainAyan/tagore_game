@@ -1,37 +1,49 @@
 extends Node2D
 
-# for Gardener NPC
-@onready var cleaning_triggers = $CleaningTriggers.get_children()
-var next_cleaning_trigger_index:int = randi_range(0, 3)
 
 func _ready():
-	$Janitor.position.x = randi_range(1000, 9000) # spawn janitor at random position
-
-func _on_janitor_finding_next_target():
-	$Janitor.set_target_cleaning_location(cleaning_triggers[next_cleaning_trigger_index].position, next_cleaning_trigger_index)
-	
-	if next_cleaning_trigger_index < 2:
-		next_cleaning_trigger_index = randi_range(2, 3)
+	if StorylineTracker.is_state_completed("checking_rooms"):
+		$Janitor.show()
+		$Janitor.position.x = randi_range(1000, 9000)
 	else:
-		next_cleaning_trigger_index = randi_range(0, 1)
+		$Janitor.hide()
+		$Janitor.stop_moving()
 
 
 func _on_debendranath_bedroom_door_tried_entering_locked_door():
-#	if key is in inventory: (pseudo code)
-#		$DebendranathBedroomDoor.enter_door()
-	pass
+	if StorylineTracker.get_current_state_name() == "checking_rooms":
+		StorylineTracker.complete_objective("try_check_debendranath_room")
+		if StorylineTracker.get_current_state_name() == "janitor_conversation":
+			$Janitor.show()
+			$Janitor.position.x = randi_range(1000, 2000)
+			$Janitor.start_moving()
 
 
-func _on_janitor_entered_dialog_trigger():
-	if StorylineTracker.get_current_state_name() == "janitor_conversation":
-		StorylineTracker.complete_objective("janitor_conversation")
-		$Janitor.start_talking($Player.position)
-		$Player.movable = false
-		$Controller.hide()
-		$JanitorDialog.start()
-
+func _on_story_tracker_trigger_on_trigger_entered():
+	$Janitor.stop_moving()
+	$Janitor.look_towards($Player.position)
+	$JanitorDialog.start()
+	dialog_start_side_effect()
 
 func _on_janitor_dialog_dialog_over():
-	$Janitor.stop_talking()
+	$Janitor.start_moving()
+	dialog_stop_side_effect()
+
+
+func _on_justified_intrusion_story_tracker_trigger_on_trigger_entered():
+	$JustifiedIntrusionDialog.start()
+	dialog_start_side_effect()
+
+func _on_justified_intrusion_dialog_dialog_over():
+	dialog_stop_side_effect()
+
+
+func dialog_start_side_effect():
+	$Player.movable = false
+	$Controller.hide()
+
+func dialog_stop_side_effect():
 	$Player.movable = true
 	$Controller.show()
+
+

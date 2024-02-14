@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjlfw2qqd24io"]
+
+[ext_resource type="Script" path="res://components/collectable/collectable.gd" id="1_khdve"]
+
+[node name="Collectable" type="Area2D"]
+script = ExtResource("1_khdve")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CollectionButton" type="Button" parent="CanvasLayer"]
+offset_left = 480.0
+offset_top = 480.0
+offset_right = 656.0
+offset_bottom = 552.0
+theme_override_font_sizes/font_size = 24
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="pressed" from="CanvasLayer/CollectionButton" to="." method="_on_collection_button_pressed"]

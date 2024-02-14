@@ -10,18 +10,24 @@ signal tried_entering_locked_door
 @export_file var scene_file:String = ""
 
 ## Allows only spawning, doesn't allow entering
-@export var oneWay:bool = false
+@export var one_way:bool = false
 
 ## A Locked door will send tried_entering_locked_door signal (not change the scene)
 @export var locked:bool = false
 
+## Message displayed when trying to enter locked door
+@export var locked_door_message = "The door is locked"
+
 @export var player:CharacterBody2D
 
 func _ready():
-	if !oneWay:
+	$CanvasLayer/LockedDoorLabel.text = locked_door_message
+	
+	if !one_way:
 		$CanvasLayer/DoorEnterButton.text = button_label
 	
 	$CanvasLayer/DoorEnterButton.hide()
+	$CanvasLayer/LockedDoorLabel.hide()
 	
 	# transporting the player to the front of the door
 	if scene_file == LastSceneTracker.last_scene_name:
@@ -29,20 +35,22 @@ func _ready():
 
 
 func _on_body_entered(body):
-	if !oneWay and body.name == player.name:
+	if !one_way and body.name == player.name:
 		$CanvasLayer/DoorEnterButton.show()
 
 
 func _on_body_exited(body):
-	if !oneWay and body.name == player.name:
+	if !one_way and body.name == player.name:
 		$CanvasLayer/DoorEnterButton.hide()
 
 
 func _on_door_enter_button_pressed():
-	if !oneWay:
+	if !one_way:
 		if !locked:
 			enter_door()
 		else:
+			$CanvasLayer/LockedDoorLabel.show()
+			$LockedDoorLableTimer.start()
 			tried_entering_locked_door.emit()
 
 
@@ -53,3 +61,6 @@ func enter_door():
 	# loading entering scene
 	get_tree().change_scene_to_file(scene_file)
 
+
+func _on_locked_door_lable_timer_timeout():
+	$CanvasLayer/LockedDoorLabel.hide()

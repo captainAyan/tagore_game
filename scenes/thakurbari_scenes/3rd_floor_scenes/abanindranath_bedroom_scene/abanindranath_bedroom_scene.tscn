@@ -1,16 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvp11i44kmpax"]
+[gd_scene load_steps=14 format=3 uid="uid://dvp11i44kmpax"]
 
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="1_6ulqk"]
+[ext_resource type="Script" path="res://scenes/thakurbari_scenes/3rd_floor_scenes/abanindranath_bedroom_scene/abanindranath_bedroom_scene.gd" id="1_aqutu"]
 [ext_resource type="PackedScene" uid="uid://sbaiant8wohb" path="res://characters/player/player.tscn" id="2_dwmh7"]
 [ext_resource type="PackedScene" uid="uid://hk232l4ks1qd" path="res://components/hud/hud.tscn" id="3_1ojnw"]
 [ext_resource type="Texture2D" uid="uid://bpcaq0ero5xkn" path="res://assets/paintings/Bharat_Mata_by_Abanindranath_Tagore.jpg" id="3_vd6eg"]
 [ext_resource type="PackedScene" uid="uid://blbhqre5hf5v6" path="res://components/controller/controller.tscn" id="4_46b77"]
 [ext_resource type="PackedScene" uid="uid://du78efvm3qb02" path="res://components/music_particle/music_particle.tscn" id="4_vi0i1"]
+[ext_resource type="PackedScene" uid="uid://cjlfw2qqd24io" path="res://components/collectable/collectable.tscn" id="7_lepca"]
 [ext_resource type="PackedScene" uid="uid://bmkccaxf6cfhs" path="res://components/pendulum/pendulum.tscn" id="8_ac07q"]
 [ext_resource type="PackedScene" uid="uid://csq3w1g5yh0kj" path="res://components/door/door.tscn" id="8_nig6v"]
 [ext_resource type="PackedScene" uid="uid://ci7xg03cgk7k0" path="res://components/clock_hand/clock_hands.tscn" id="9_qjsqd"]
+[ext_resource type="PackedScene" uid="uid://b3pqxq4gnu060" path="res://components/trigger/story_tracker_trigger.tscn" id="11_dd341"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gq13f"]
+size = Vector2(96, 16)
 
 [node name="AbanindranathBedroomScene" type="Node2D"]
+script = ExtResource("1_aqutu")
 
 [node name="BackgroundTileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_6ulqk")
@@ -44,6 +51,38 @@ metadata/_edit_lock_ = true
 position = Vector2(1480, 1528)
 metadata/_edit_lock_ = true
 
+[node name="BharatMataByAbanindranathTagore" type="Sprite2D" parent="."]
+position = Vector2(4176, 1152)
+scale = Vector2(0.44, 0.433311)
+texture = ExtResource("3_vd6eg")
+metadata/_edit_lock_ = true
+
+[node name="Pendulum" parent="." instance=ExtResource("8_ac07q")]
+position = Vector2(1512, 1000)
+metadata/_edit_lock_ = true
+
+[node name="WallClockHands" parent="." instance=ExtResource("9_qjsqd")]
+position = Vector2(1512, 940)
+scale = Vector2(1.25, 1.25)
+metadata/_edit_lock_ = true
+
+[node name="TableClockHands" parent="." instance=ExtResource("9_qjsqd")]
+position = Vector2(4248, 1549)
+scale = Vector2(0.75, 0.75)
+metadata/_edit_lock_ = true
+
+[node name="CandleCollectable" parent="." instance=ExtResource("7_lepca")]
+position = Vector2(3984, 1540)
+sprite_file = "res://assets/candle.png"
+button_label = "Pick up Candle"
+collection_state = "find_light"
+collection_objective = "find_light"
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CandleCollectable"]
+position = Vector2(0, 116)
+shape = SubResource("RectangleShape2D_gq13f")
+
 [node name="Player" parent="." instance=ExtResource("2_dwmh7")]
 position = Vector2(1001, 1791)
 
@@ -70,26 +109,6 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(851997, 655361, 10, 917533, 655361, 11, 917534, 524289, 11, 917535, 524289, 11, 917536, 524289, 11, 917537, 524289, 11, 917538, 720897, 11, 852002, 720897, 10, 786466, 720897, 9, 852001, 524289, 9)
 metadata/_edit_lock_ = true
 
-[node name="BharatMataByAbanindranathTagore" type="Sprite2D" parent="."]
-position = Vector2(4176, 1152)
-scale = Vector2(0.44, 0.433311)
-texture = ExtResource("3_vd6eg")
-metadata/_edit_lock_ = true
-
-[node name="Pendulum" parent="." instance=ExtResource("8_ac07q")]
-position = Vector2(1512, 1000)
-metadata/_edit_lock_ = true
-
-[node name="WallClockHands" parent="." instance=ExtResource("9_qjsqd")]
-position = Vector2(1512, 940)
-scale = Vector2(1.25, 1.25)
-metadata/_edit_lock_ = true
-
-[node name="TableClockHands" parent="." instance=ExtResource("9_qjsqd")]
-position = Vector2(4248, 1549)
-scale = Vector2(0.75, 0.75)
-metadata/_edit_lock_ = true
-
 [node name="CorridorDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_nig6v")]
 position = Vector2(576, 1728)
 button_label = "Enter Corridor"
@@ -101,3 +120,10 @@ metadata/_edit_lock_ = true
 level_name = "Abanindranath Bedroom Scene"
 
 [node name="Controller" parent="." instance=ExtResource("4_46b77")]
+
+[node name="CheckAbanindranathStoryTrackerTrigger" parent="." instance=ExtResource("11_dd341")]
+position = Vector2(3248, 1648)
+scale = Vector2(1, 30)
+storyline_state = "checking_rooms"
+objective_to_complete = "check_abanindranath_room"
+metadata/_edit_lock_ = true

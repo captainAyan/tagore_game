@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://csdp283y4hvug"]
+
+[ext_resource type="Script" path="res://components/trigger/area_with_id_trigger.gd" id="1_m4ddf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_024x1"]
+size = Vector2(16, 16)
+
+[node name="AreaWithIdTrigger" type="Area2D"]
+top_level = true
+script = ExtResource("1_m4ddf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_024x1")
+metadata/_edit_lock_ = true

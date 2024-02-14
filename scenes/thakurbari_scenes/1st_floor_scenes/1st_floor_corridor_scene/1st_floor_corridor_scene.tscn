@@ -108,6 +108,14 @@ scene_file = "res://scenes/thakurbari_scenes/main_staircase_scene/main_staircase
 player = NodePath("../Player")
 metadata/_edit_lock_ = true
 
+[node name="BasementDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_e5l5a")]
+position = Vector2(7488, 1728)
+button_label = "Enter Basement"
+scene_file = "res://scenes/thakurbari_scenes/basement_scenes/basement_staircase_scene/basement_staircase_scene.tscn"
+locked_door_message = "Cannot enter, too dark"
+player = NodePath("../Player")
+metadata/_edit_lock_ = true
+
 [node name="HUD" parent="." instance=ExtResource("4_lkjab")]
 level_name = "1st Floor Corridor Scene"
 

@@ -1,13 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://d5nbx4ncxeoa"]
+[gd_scene load_steps=9 format=3 uid="uid://d5nbx4ncxeoa"]
 
+[ext_resource type="Script" path="res://scenes/thakurbari_scenes/3rd_floor_scenes/jyotirindranath_bedroom_scene/jyotirindranath_bedroom_scene.gd" id="1_e4w70"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="1_qkkxr"]
 [ext_resource type="PackedScene" uid="uid://sbaiant8wohb" path="res://characters/player/player.tscn" id="2_put54"]
 [ext_resource type="PackedScene" uid="uid://csq3w1g5yh0kj" path="res://components/door/door.tscn" id="3_1tknu"]
 [ext_resource type="PackedScene" uid="uid://hk232l4ks1qd" path="res://components/hud/hud.tscn" id="3_jjqmc"]
 [ext_resource type="PackedScene" uid="uid://ci7xg03cgk7k0" path="res://components/clock_hand/clock_hands.tscn" id="4_hh558"]
 [ext_resource type="PackedScene" uid="uid://blbhqre5hf5v6" path="res://components/controller/controller.tscn" id="4_koqur"]
+[ext_resource type="PackedScene" uid="uid://b3pqxq4gnu060" path="res://components/trigger/story_tracker_trigger.tscn" id="8_8s80c"]
 
 [node name="JyotirindranathBedroomScene" type="Node2D"]
+script = ExtResource("1_e4w70")
 
 [node name="BackgroundTileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_qkkxr")
@@ -37,6 +40,18 @@ layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array(458766, 327681, 0, 524299, 393217, 5, 589835, 458753, 3, 589836, 393217, 3, 655372, 393217, 5, 655373, 458753, 5, 720909, 458753, 3, 720910, 393217, 3, 655374, 393217, 5, 589838, 458753, 3, 589837, 393217, 5, 655371, 458753, 5, 720907, 393217, 4, 720908, 458753, 5, 524301, 589825, 5, 524302, 655361, 5, 458764, 655361, 6, 524311, 458753, 4, 589847, 393217, 4, 589848, 393217, 5, 655384, 393217, 4, 655383, 458753, 3, 720920, 458753, 3, 655385, 393217, 5, 589849, 393217, 4, 720921, 458753, 3, 720922, 393217, 3, 720919, 458753, 5, 589850, 393217, 4, 655386, 458753, 4, 524312, 393217, 4, 524313, 458753, 5, 524314, 458753, 4, 458775, 458753, 5, 458776, 458753, 3, 458777, 393217, 4, 458778, 458753, 5)
 metadata/_edit_lock_ = true
 
+[node name="CorridorDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_1tknu")]
+position = Vector2(2736, 1728)
+button_label = "Enter Corridor"
+scene_file = "res://scenes/thakurbari_scenes/3rd_floor_scenes/3rd_floor_corridor_scene/3rd_floor_corridor_scene.tscn"
+player = NodePath("../Player")
+metadata/_edit_lock_ = true
+
+[node name="TableClockHands" parent="." instance=ExtResource("4_hh558")]
+position = Vector2(4392, 1405)
+scale = Vector2(0.75, 0.75)
+metadata/_edit_lock_ = true
+
 [node name="Player" parent="." instance=ExtResource("2_put54")]
 position = Vector2(1001, 1791)
 
@@ -63,19 +78,23 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(786466, 720897, 9, 852002, 720897, 10, 917538, 720897, 11, 917537, 524289, 11, 917536, 524289, 11, 917535, 524289, 11, 917534, 524289, 11, 917533, 655361, 11, 851997, 655361, 10, 852001, 524289, 9)
 metadata/_edit_lock_ = true
 
-[node name="CorridorDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_1tknu")]
-position = Vector2(2736, 1728)
-button_label = "Enter Corridor"
-scene_file = "res://scenes/thakurbari_scenes/3rd_floor_scenes/3rd_floor_corridor_scene/3rd_floor_corridor_scene.tscn"
-player = NodePath("../Player")
-metadata/_edit_lock_ = true
-
-[node name="TableClockHands" parent="." instance=ExtResource("4_hh558")]
-position = Vector2(4392, 1405)
-scale = Vector2(0.75, 0.75)
-metadata/_edit_lock_ = true
-
 [node name="Controller" parent="." instance=ExtResource("4_koqur")]
 
 [node name="HUD" parent="." instance=ExtResource("3_jjqmc")]
 level_name = "Jyotirindranath Bedroom Scene"
+
+[node name="CheckJyotirindranathStoryTrackerTrigger" parent="." instance=ExtResource("8_8s80c")]
+position = Vector2(2032, 1648)
+scale = Vector2(1, 30)
+storyline_state = "checking_rooms"
+objective_to_complete = "check_jyotirindranath_room"
+metadata/_edit_lock_ = true
+
+[node name="CheckJyotirindranathStoryTrackerTrigger2" parent="." instance=ExtResource("8_8s80c")]
+position = Vector2(3264, 1648)
+scale = Vector2(1, 30)
+storyline_state = "checking_rooms"
+objective_to_complete = "check_jyotirindranath_room"
+metadata/_edit_lock_ = true
+
+[connection signal="on_trigger_entered" from="CheckJyotirindranathStoryTrackerTrigger" to="." method="_on_check_jyotirindranath_story_tracker_trigger_on_trigger_entered"]

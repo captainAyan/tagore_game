@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://uubcyj5jowo3"]
+[gd_scene load_steps=14 format=3 uid="uid://uubcyj5jowo3"]
 
 [ext_resource type="Script" path="res://scenes/thakurbari_scenes/2nd_floor_scenes/2nd_floor_corridor_scene/2nd_floor_corridor_scene.gd" id="1_nypv3"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="2_wysm2"]
@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://sbaiant8wohb" path="res://characters/player/player.tscn" id="3_veexk"]
 [ext_resource type="PackedScene" uid="uid://hk232l4ks1qd" path="res://components/hud/hud.tscn" id="4_lrvyi"]
 [ext_resource type="PackedScene" uid="uid://csq3w1g5yh0kj" path="res://components/door/door.tscn" id="5_7y2dy"]
+[ext_resource type="PackedScene" uid="uid://b3pqxq4gnu060" path="res://components/trigger/story_tracker_trigger.tscn" id="5_o4ao0"]
+[ext_resource type="PackedScene" uid="uid://csdp283y4hvug" path="res://components/trigger/area_with_id_trigger.tscn" id="5_usdcu"]
 [ext_resource type="PackedScene" uid="uid://blbhqre5hf5v6" path="res://components/controller/controller.tscn" id="6_0dbx0"]
-[ext_resource type="PackedScene" uid="uid://djmpjbnmlm802" path="res://characters/npcs/gardener/plant_trigger.tscn" id="8_m8cxb"]
 [ext_resource type="PackedScene" uid="uid://t8jp1w7vj0lv" path="res://components/dialog/dialog.tscn" id="9_45lkk"]
 
 [sub_resource type="Animation" id="Animation_s88na"]
@@ -26,6 +27,7 @@ _data = {
 [node name="2ndFloorCorridorScene" type="Node2D"]
 position = Vector2(0, 288)
 script = ExtResource("1_nypv3")
+metadata/_edit_horizontal_guides_ = [1840.0]
 
 [node name="BackgroundTileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_wysm2")
@@ -49,38 +51,42 @@ layer_2/tile_data = PackedInt32Array(262229, 720897, 0, 327765, 720897, 1, 39330
 metadata/_edit_lock_ = true
 
 [node name="Gardener" parent="." instance=ExtResource("3_fmyv2")]
-position = Vector2(9416, 1408)
+position = Vector2(9680, 1408)
 
-[node name="PlantTriggers" type="Node2D" parent="."]
+[node name="AreaWithIdTrigger" parent="Gardener" groups=["plant_trigger"] instance=ExtResource("5_usdcu")]
+position = Vector2(10008, 1840)
+id = "g 0"
 metadata/_edit_lock_ = true
 
-[node name="PlantTrigger" parent="PlantTriggers" instance=ExtResource("8_m8cxb")]
-position = Vector2(10008, 1560)
-ID = 0
+[node name="AreaWithIdTrigger2" parent="Gardener" groups=["plant_trigger"] instance=ExtResource("5_usdcu")]
+position = Vector2(9288, 1840)
+id = "g 1"
 metadata/_edit_lock_ = true
 
-[node name="PlantTrigger2" parent="PlantTriggers" instance=ExtResource("8_m8cxb")]
-position = Vector2(9288, 1560)
+[node name="AreaWithIdTrigger3" parent="Gardener" groups=["plant_trigger"] instance=ExtResource("5_usdcu")]
+position = Vector2(7128, 1840)
+id = "g 2"
 metadata/_edit_lock_ = true
 
-[node name="PlantTrigger3" parent="PlantTriggers" instance=ExtResource("8_m8cxb")]
-position = Vector2(7128, 1560)
-ID = 2
+[node name="AreaWithIdTrigger4" parent="Gardener" groups=["plant_trigger"] instance=ExtResource("5_usdcu")]
+position = Vector2(6408, 1840)
+id = "g 3"
 metadata/_edit_lock_ = true
 
-[node name="PlantTrigger4" parent="PlantTriggers" instance=ExtResource("8_m8cxb")]
-position = Vector2(6408, 1560)
-ID = 3
+[node name="AreaWithIdTrigger5" parent="Gardener" groups=["plant_trigger"] instance=ExtResource("5_usdcu")]
+position = Vector2(4248, 1840)
+id = "g 4"
 metadata/_edit_lock_ = true
 
-[node name="PlantTrigger5" parent="PlantTriggers" instance=ExtResource("8_m8cxb")]
-position = Vector2(4248, 1560)
-ID = 4
+[node name="AreaWithIdTrigger6" parent="Gardener" groups=["plant_trigger"] instance=ExtResource("5_usdcu")]
+position = Vector2(3528, 1840)
+id = "g 5"
 metadata/_edit_lock_ = true
 
-[node name="PlantTrigger6" parent="PlantTriggers" instance=ExtResource("8_m8cxb")]
-position = Vector2(3528, 1560)
-ID = 5
+[node name="StoryTrackerTrigger" parent="Gardener" instance=ExtResource("5_o4ao0")]
+scale = Vector2(50.36, 1)
+storyline_state = "gardener_conversation"
+objective_to_complete = "gardener_conversation"
 metadata/_edit_lock_ = true
 
 [node name="GardenerDialog" parent="." instance=ExtResource("9_45lkk")]
@@ -137,6 +143,5 @@ libraries = {
 "": SubResource("AnimationLibrary_h8wnh")
 }
 
-[connection signal="entered_dialog_trigger" from="Gardener" to="." method="_on_gardener_entered_dialog_trigger"]
-[connection signal="finding_next_target" from="Gardener" to="." method="_on_gardener_finding_next_target"]
+[connection signal="on_trigger_entered" from="Gardener/StoryTrackerTrigger" to="." method="_on_story_tracker_trigger_on_trigger_entered"]
 [connection signal="dialog_over" from="GardenerDialog" to="." method="_on_gardener_dialog_dialog_over"]

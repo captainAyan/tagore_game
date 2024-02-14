@@ -8,7 +8,7 @@ const states:Array = [
 	{name = "checking_rooms", objectives = [
 		"check_jyotirindranath_room",
 		"check_abanindranath_room",
-		"check_debendranath_room",
+		"try_check_debendranath_room",
 	]},
 	{name = "janitor_conversation", objectives = ["janitor_conversation"]},
 	{name = "find_basement_door", objectives = ["find_basement_door"]},
@@ -34,3 +34,9 @@ func complete_objective(objective):
 
 func get_current_state_name():
 	return states[current_state_index].name
+
+func is_state_completed(state_name:String) -> bool:
+	for i in range(states.size()):
+		if states[i].name == state_name and i < current_state_index:
+			return true
+	return false
