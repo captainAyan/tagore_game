@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d5nbx4ncxeoa"]
+[gd_scene load_steps=10 format=3 uid="uid://d5nbx4ncxeoa"]
 
 [ext_resource type="Script" path="res://scenes/thakurbari_scenes/3rd_floor_scenes/jyotirindranath_bedroom_scene/jyotirindranath_bedroom_scene.gd" id="1_e4w70"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="1_qkkxr"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://ci7xg03cgk7k0" path="res://components/clock_hand/clock_hands.tscn" id="4_hh558"]
 [ext_resource type="PackedScene" uid="uid://blbhqre5hf5v6" path="res://components/controller/controller.tscn" id="4_koqur"]
 [ext_resource type="PackedScene" uid="uid://b3pqxq4gnu060" path="res://components/trigger/story_tracker_trigger.tscn" id="8_8s80c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2itv2"]
+size = Vector2(20, 608)
 
 [node name="JyotirindranathBedroomScene" type="Node2D"]
 script = ExtResource("1_e4w70")
@@ -85,16 +88,15 @@ level_name = "Jyotirindranath Bedroom Scene"
 
 [node name="CheckJyotirindranathStoryTrackerTrigger" parent="." instance=ExtResource("8_8s80c")]
 position = Vector2(2032, 1648)
-scale = Vector2(1, 30)
 storyline_state = "checking_rooms"
 objective_to_complete = "check_jyotirindranath_room"
 metadata/_edit_lock_ = true
 
-[node name="CheckJyotirindranathStoryTrackerTrigger2" parent="." instance=ExtResource("8_8s80c")]
-position = Vector2(3264, 1648)
-scale = Vector2(1, 30)
-storyline_state = "checking_rooms"
-objective_to_complete = "check_jyotirindranath_room"
-metadata/_edit_lock_ = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckJyotirindranathStoryTrackerTrigger"]
+shape = SubResource("RectangleShape2D_2itv2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CheckJyotirindranathStoryTrackerTrigger"]
+position = Vector2(1232, 0)
+shape = SubResource("RectangleShape2D_2itv2")
 
 [connection signal="on_trigger_entered" from="CheckJyotirindranathStoryTrackerTrigger" to="." method="_on_check_jyotirindranath_story_tracker_trigger_on_trigger_entered"]

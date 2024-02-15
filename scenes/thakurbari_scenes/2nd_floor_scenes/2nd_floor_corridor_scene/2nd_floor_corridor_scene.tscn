@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://uubcyj5jowo3"]
+[gd_scene load_steps=21 format=3 uid="uid://uubcyj5jowo3"]
 
 [ext_resource type="Script" path="res://scenes/thakurbari_scenes/2nd_floor_scenes/2nd_floor_corridor_scene/2nd_floor_corridor_scene.gd" id="1_nypv3"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="2_wysm2"]
@@ -10,6 +10,21 @@
 [ext_resource type="PackedScene" uid="uid://csdp283y4hvug" path="res://components/trigger/area_with_id_trigger.tscn" id="5_usdcu"]
 [ext_resource type="PackedScene" uid="uid://blbhqre5hf5v6" path="res://components/controller/controller.tscn" id="6_0dbx0"]
 [ext_resource type="PackedScene" uid="uid://t8jp1w7vj0lv" path="res://components/dialog/dialog.tscn" id="9_45lkk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ap2dd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjasp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhy42"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gniat"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvbqp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgxx1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rw7a"]
+size = Vector2(863.963, 20)
 
 [sub_resource type="Animation" id="Animation_s88na"]
 resource_name = "RESET"
@@ -27,7 +42,6 @@ _data = {
 [node name="2ndFloorCorridorScene" type="Node2D"]
 position = Vector2(0, 288)
 script = ExtResource("1_nypv3")
-metadata/_edit_horizontal_guides_ = [1840.0]
 
 [node name="BackgroundTileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_wysm2")
@@ -58,36 +72,56 @@ position = Vector2(10008, 1840)
 id = "g 0"
 metadata/_edit_lock_ = true
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gardener/AreaWithIdTrigger"]
+shape = SubResource("RectangleShape2D_ap2dd")
+
 [node name="AreaWithIdTrigger2" parent="Gardener" groups=["plant_trigger"] instance=ExtResource("5_usdcu")]
 position = Vector2(9288, 1840)
 id = "g 1"
 metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gardener/AreaWithIdTrigger2"]
+shape = SubResource("RectangleShape2D_jjasp")
 
 [node name="AreaWithIdTrigger3" parent="Gardener" groups=["plant_trigger"] instance=ExtResource("5_usdcu")]
 position = Vector2(7128, 1840)
 id = "g 2"
 metadata/_edit_lock_ = true
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gardener/AreaWithIdTrigger3"]
+shape = SubResource("RectangleShape2D_qhy42")
+
 [node name="AreaWithIdTrigger4" parent="Gardener" groups=["plant_trigger"] instance=ExtResource("5_usdcu")]
 position = Vector2(6408, 1840)
 id = "g 3"
 metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gardener/AreaWithIdTrigger4"]
+shape = SubResource("RectangleShape2D_gniat")
 
 [node name="AreaWithIdTrigger5" parent="Gardener" groups=["plant_trigger"] instance=ExtResource("5_usdcu")]
 position = Vector2(4248, 1840)
 id = "g 4"
 metadata/_edit_lock_ = true
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gardener/AreaWithIdTrigger5"]
+shape = SubResource("RectangleShape2D_fvbqp")
+
 [node name="AreaWithIdTrigger6" parent="Gardener" groups=["plant_trigger"] instance=ExtResource("5_usdcu")]
 position = Vector2(3528, 1840)
 id = "g 5"
 metadata/_edit_lock_ = true
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gardener/AreaWithIdTrigger6"]
+shape = SubResource("RectangleShape2D_vgxx1")
+
 [node name="StoryTrackerTrigger" parent="Gardener" instance=ExtResource("5_o4ao0")]
-scale = Vector2(50.36, 1)
 storyline_state = "gardener_conversation"
 objective_to_complete = "gardener_conversation"
 metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gardener/StoryTrackerTrigger"]
+shape = SubResource("RectangleShape2D_6rw7a")
 
 [node name="GardenerDialog" parent="." instance=ExtResource("9_45lkk")]
 dialogs = Array[String](["Hello World", "This is Tagore Game"])

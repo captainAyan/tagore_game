@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1utuoxukex3f"]
+[gd_scene load_steps=13 format=3 uid="uid://d1utuoxukex3f"]
 
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="1_4mhrq"]
 [ext_resource type="Script" path="res://scenes/thakurbari_scenes/basement_scenes/basement_staircase_scene/basement_staircase_scene.gd" id="1_ou58w"]
@@ -19,6 +19,9 @@ gradient = SubResource("Gradient_0kkl8")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmwuv"]
+size = Vector2(16, 16)
 
 [node name="BasementStaircaseScene" type="Node2D"]
 script = ExtResource("1_ou58w")
@@ -105,6 +108,7 @@ limit_bottom = 7056
 editor_draw_limits = true
 
 [node name="Candle" type="Node2D" parent="Player"]
+visible = false
 position = Vector2(8, 33)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/Candle"]
@@ -129,6 +133,10 @@ position = Vector2(7917, 1708)
 storyline_state = "find_basement_door"
 objective_to_complete = "find_basement_door"
 metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FindBasementDoorStoryTrackerTrigger"]
+position = Vector2(3, 4)
+shape = SubResource("RectangleShape2D_nmwuv")
 
 [node name="FindBasementDoorDialog" parent="." instance=ExtResource("7_hu7kr")]
 dialogs = Array[String](["Finally! Found the basement.", "It's little dark though.", "Maybe I should find a lamp."])

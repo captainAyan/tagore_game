@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bh07qvqjxe7bq"]
+[gd_scene load_steps=17 format=3 uid="uid://bh07qvqjxe7bq"]
 
 [ext_resource type="Script" path="res://scenes/thakurbari_scenes/3rd_floor_scenes/3rd_floor_corridor_scene/3rd_floor_corridor_scene.gd" id="1_8s2x0"]
 [ext_resource type="TileSet" uid="uid://cpd5m658c1iap" path="res://assets/tileset/thakurbari_tiles.tres" id="2_umdt0"]
@@ -10,6 +10,20 @@
 [ext_resource type="PackedScene" uid="uid://csdp283y4hvug" path="res://components/trigger/area_with_id_trigger.tscn" id="5_wvir3"]
 [ext_resource type="PackedScene" uid="uid://blbhqre5hf5v6" path="res://components/controller/controller.tscn" id="6_fgl2p"]
 [ext_resource type="PackedScene" uid="uid://b3pqxq4gnu060" path="res://components/trigger/story_tracker_trigger.tscn" id="10_w4ylv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tsm2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shouf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awhmh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqoi2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3wej"]
+size = Vector2(688, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13bwf"]
+size = Vector2(16, 592)
 
 [node name="3rdFloorCorridorScene" type="Node2D"]
 script = ExtResource("1_8s2x0")
@@ -50,27 +64,41 @@ position = Vector2(2160, 1896)
 id = "j 0"
 metadata/_edit_lock_ = true
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Janitor/AreaWithIdTrigger"]
+shape = SubResource("RectangleShape2D_0tsm2")
+
 [node name="AreaWithIdTrigger2" parent="Janitor" groups=["cleaning_trigger"] instance=ExtResource("5_wvir3")]
 position = Vector2(4200, 1896)
 id = "j 1"
 metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Janitor/AreaWithIdTrigger2"]
+shape = SubResource("RectangleShape2D_shouf")
 
 [node name="AreaWithIdTrigger3" parent="Janitor" groups=["cleaning_trigger"] instance=ExtResource("5_wvir3")]
 position = Vector2(5696, 1896)
 id = "j 2"
 metadata/_edit_lock_ = true
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Janitor/AreaWithIdTrigger3"]
+shape = SubResource("RectangleShape2D_awhmh")
+
 [node name="AreaWithIdTrigger4" parent="Janitor" groups=["cleaning_trigger"] instance=ExtResource("5_wvir3")]
 position = Vector2(8136, 1896)
 id = "j 3"
 metadata/_edit_lock_ = true
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Janitor/AreaWithIdTrigger4"]
+shape = SubResource("RectangleShape2D_oqoi2")
+
 [node name="StoryTrackerTrigger" parent="Janitor" instance=ExtResource("10_w4ylv")]
 position = Vector2(0.00012207, 0)
-scale = Vector2(30, 1)
 storyline_state = "janitor_conversation"
 objective_to_complete = "janitor_conversation"
 metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Janitor/StoryTrackerTrigger"]
+shape = SubResource("RectangleShape2D_y3wej")
 
 [node name="Player" parent="." instance=ExtResource("3_wsaxx")]
 position = Vector2(1001, 1664)
@@ -130,10 +158,12 @@ metadata/_edit_lock_ = true
 
 [node name="JustifiedIntrusionStoryTrackerTrigger" parent="." instance=ExtResource("10_w4ylv")]
 position = Vector2(3496, 1624)
-scale = Vector2(1, 30)
 storyline_state = "justified_intrusion"
 objective_to_complete = "justified_intrusion"
 metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JustifiedIntrusionStoryTrackerTrigger"]
+shape = SubResource("RectangleShape2D_13bwf")
 
 [node name="HUD" parent="." instance=ExtResource("4_68xxy")]
 level_name = "3rd Floor Corridor Scene"
