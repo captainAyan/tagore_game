@@ -18,6 +18,9 @@ signal tried_entering_locked_door
 ## Message displayed when trying to enter locked door
 @export var locked_door_message = "The door is locked"
 
+## The door button will only show up if the door is active
+@export var is_active:bool = true
+
 @export var player:CharacterBody2D
 
 func _ready():
@@ -35,12 +38,12 @@ func _ready():
 
 
 func _on_body_entered(body):
-	if !one_way and body.name == player.name:
+	if !one_way and body.name == player.name and is_active:
 		$CanvasLayer/DoorEnterButton.show()
 
 
 func _on_body_exited(body):
-	if !one_way and body.name == player.name:
+	if !one_way and body.name == player.name and is_active:
 		$CanvasLayer/DoorEnterButton.hide()
 
 
