@@ -43,7 +43,11 @@ level_name = "Basement Staircase Scene"
 [node name="Controller" parent="." instance=ExtResource("3_fxrml")]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 blend_mode = 1
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.00784314, 0.00784314, 0.00784314, 1)
 
 [node name="Player" parent="." instance=ExtResource("4_eayg6")]
 position = Vector2(7912, 1616)
@@ -69,7 +73,6 @@ texture = ExtResource("6_egk6x")
 position = Vector2(0, -28)
 scale = Vector2(50, 50)
 color = Color(0.996094, 0.917969, 0.796875, 1)
-energy = 1.5
 texture = SubResource("GradientTexture2D_eb77v")
 
 [node name="CorridorDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_xw0bd")]
