@@ -6,9 +6,13 @@ signal entered
 var current_dialog_index:int = 0
 
 ## Dialog script
-@export var dialogs: Array[String] = []
+var dialogs = []
+@export_file var dialog_file
 
 func _ready():
+	var file = FileAccess.open(dialog_file, FileAccess.READ)
+	var content = file.get_as_text()
+	dialogs = JSON.parse_string(content)
 	self.hide()
 
 func start():

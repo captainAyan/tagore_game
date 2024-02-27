@@ -7,10 +7,11 @@ func _ready():
 
 
 func _on_find_basement_door_story_tracker_trigger_on_trigger_entered():
-	$FindBasementDoorDialog.start()
+	$FoundBasementDoorDialog.start()
 	dialog_start_side_effect()
 
-func _on_find_basement_door_dialog_dialog_over():
+
+func _on_found_basement_door_dialog_dialog_over():
 	dialog_stop_side_effect()
 	$CorridorDoor.enter_door()
 

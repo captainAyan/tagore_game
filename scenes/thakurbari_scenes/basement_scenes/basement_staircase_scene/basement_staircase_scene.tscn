@@ -92,8 +92,9 @@ metadata/_edit_lock_ = true
 position = Vector2(3, 4)
 shape = SubResource("RectangleShape2D_nmwuv")
 
-[node name="FindBasementDoorDialog" parent="." instance=ExtResource("7_hu7kr")]
-dialogs = Array[String](["Finally! Found the basement.", "It's little dark though.", "Maybe I should find a lamp."])
+[node name="FoundBasementDoorDialog" parent="." instance=ExtResource("7_hu7kr")]
+visible = false
+dialog_file = "res://dialogs/found_basement_door.json"
 
 [connection signal="on_trigger_entered" from="FindBasementDoorStoryTrackerTrigger" to="." method="_on_find_basement_door_story_tracker_trigger_on_trigger_entered"]
-[connection signal="dialog_over" from="FindBasementDoorDialog" to="." method="_on_find_basement_door_dialog_dialog_over"]
+[connection signal="dialog_over" from="FoundBasementDoorDialog" to="." method="_on_found_basement_door_dialog_dialog_over"]

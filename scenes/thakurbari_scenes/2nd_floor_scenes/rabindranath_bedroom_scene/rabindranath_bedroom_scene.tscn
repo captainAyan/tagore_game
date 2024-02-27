@@ -651,10 +651,10 @@ libraries = {
 }
 
 [node name="AfterWakeUpDialog" parent="." instance=ExtResource("15_uxaw8")]
-dialogs = Array[String](["Ohh! what a jolly good day it is.", "Definitely nothing ominous is about to transpire."])
+dialog_file = "res://dialogs/after_wake_up.json"
 
 [node name="FoundMissingDialog" parent="." instance=ExtResource("15_uxaw8")]
-dialogs = Array[String](["Oh no, why is my shit lying around?", "Hold on, where is X (placeholder)?", "What the fuck is going on?"])
+dialog_file = "res://dialogs/found_missing.json"
 
 [node name="BooksAndPapers" type="Node" parent="."]
 
